@@ -8,8 +8,8 @@ const defaultShadow = '0 2px 4px rgba(0, 0, 0, 0.1)'
 const Container = styled.button<{ styleType: StyleType; sizeType: SizeType }>`
   ${({ theme, styleType, sizeType }) => css`
     font-size: 1rem;
-    border-radius: 12px / 16px;
-    padding: 0 28px;
+    border-radius: 0.75rem / 1rem;
+    padding: 0 1.75rem;
     cursor: pointer;
     font-weight: 700;
     box-shadow: ${defaultShadow};
@@ -70,18 +70,20 @@ const Container = styled.button<{ styleType: StyleType; sizeType: SizeType }>`
   `}
 `
 
-interface Props {
+export interface Props {
   small?: boolean
   submit?: boolean
   primary?: boolean
   disabled?: boolean
   children: React.ReactNode
+  onClick?(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void
 }
 
 export default function Button({
   small,
   submit,
   primary,
+  onClick,
   disabled,
   children,
 }: Props) {
@@ -92,6 +94,7 @@ export default function Button({
       disabled={disabled}
       sizeType={sizeType}
       styleType={styleType}
+      onClick={onClick}
       type={submit ? 'submit' : 'button'}
     >
       {children}

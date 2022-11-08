@@ -24,7 +24,7 @@ root.render(
   <ThemeProvider theme={theme}>
     <React.StrictMode>
       <h1>opa!</h1>
-      <Button disabled>Primary</Button>
+      <Button primary>Primary</Button>
       <GlobalCSS />
     </React.StrictMode>
   </ThemeProvider>

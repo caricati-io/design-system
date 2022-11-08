@@ -11,6 +11,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
+    // 'plugin:storybook/recommended',
   ],
   settings: {
     'import/resolver': {
@@ -20,7 +21,6 @@ module.exports = {
       },
     },
   },
-  overrides: [],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     sourceType: 'module',
@@ -28,9 +28,24 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
-    "react/react-in-jsx-scope": "off",
-    "react/require-default-props": "off",
+    'react/react-in-jsx-scope': 'off',
+    'react/require-default-props': 'off',
+    'import/no-extraneous-dependencies': 'off',
     semi: ['error', 'never'],
-    'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.ts'] }],
+    'react/jsx-filename-extension': [
+      1,
+      {
+        extensions: ['.tsx', '.ts'],
+      },
+    ],
   },
+  overrides: [
+    {
+      files: ['*stories.tsx'],
+      rules: {
+        'react/jsx-props-no-spreading': 'off',
+        'react/function-component-definition': 'off',
+      },
+    },
+  ],
 }

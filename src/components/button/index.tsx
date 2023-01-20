@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import Icon, { IconType } from '../icon'
 
 type StyleType = 'primary' | 'default'
 type SizeType = 'normal' | 'small'
@@ -8,20 +9,23 @@ const defaultShadow = '0 2px 4px rgba(0, 0, 0, 0.1)'
 const Container = styled.button<{ styleType: StyleType; sizeType: SizeType }>`
   ${({ theme, styleType, sizeType }) => css`
     font-size: 1rem;
-    border-radius: 0.75rem / 1rem;
+    border-radius: 0.625rem;
     padding: 0 1.75rem;
     cursor: pointer;
     font-weight: 700;
     box-shadow: ${defaultShadow};
     transition: all ease-in-out 250ms;
+    display: flex;
+    align-items: center;
 
     &:hover {
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      box-shadow: ${theme.shadows.btnHover};
     }
 
     &:disabled {
       cursor: default;
       box-shadow: none;
+      opacity: 0.75;
     }
 
     ${(() => {
@@ -31,23 +35,15 @@ const Container = styled.button<{ styleType: StyleType; sizeType: SizeType }>`
           background-color: ${theme.colors.primary};
           border: 1px solid rgba(255, 255, 255, 0.1);
 
-          &:disabled {
-            color: ${theme.colors.primaryTextDisabled};
-          }
-
           &:focus {
             box-shadow: ${defaultShadow}, ${theme.shadows.btnPrimaryFocus};
           }
         `
       }
       return css`
-        color: ${theme.colors.inputText};
-        background-color: ${theme.colors.input};
-        border: 1px solid rgba(255, 255, 255, 0.05);
-
-        &:disabled {
-          color: ${theme.colors.inputTextDisabled};
-        }
+        color: ${theme.colors.btnDefaultText};
+        background-color: ${theme.colors.btnDefault};
+        border: 1px solid rgba(255, 255, 255, 0.1);
 
         &:focus {
           box-shadow: ${defaultShadow}, ${theme.shadows.btnDefaultFocus};
@@ -60,22 +56,37 @@ const Container = styled.button<{ styleType: StyleType; sizeType: SizeType }>`
         return css`
           height: 40px;
           line-height: 40px;
+          padding: 0 1.5rem;
         `
       }
       return css`
         height: 44px;
         line-height: 44px;
+        padding: 0 1.75rem;
       `
     })()}
   `}
+`
+
+const LeftIcon = styled(Icon)`
+  margin-right: 0.625rem;
+  margin-left: -4px;
+`
+
+const RightIcon = styled(Icon)`
+  margin-left: 0.625rem;
+  margin-right: -4px;
 `
 
 export interface Props {
   small?: boolean
   submit?: boolean
   primary?: boolean
+  className?: string
   disabled?: boolean
   children: React.ReactNode
+  leftIcon?: IconType
+  rightIcon?: IconType
   onClick?(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void
 }
 
@@ -86,18 +97,24 @@ export default function Button({
   onClick,
   disabled,
   children,
+  className,
+  leftIcon,
+  rightIcon,
 }: Props) {
   const styleType = primary ? 'primary' : 'default'
   const sizeType = small ? 'small' : 'normal'
   return (
     <Container
+      onClick={onClick}
       disabled={disabled}
       sizeType={sizeType}
+      className={className}
       styleType={styleType}
-      onClick={onClick}
       type={submit ? 'submit' : 'button'}
     >
-      {children}
+      {leftIcon && <LeftIcon name={leftIcon} size={20} />}
+      <span>{children}</span>
+      {rightIcon && <RightIcon name={rightIcon} size={20} />}
     </Container>
   )
 }

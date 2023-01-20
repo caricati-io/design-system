@@ -1,4 +1,3 @@
-import React from 'react'
 import { Story } from '@storybook/react'
 import Button, { Props } from '.'
 
@@ -9,14 +8,12 @@ export default {
 
 const Template: Story<Props> = (args) => <Button {...args} />
 
-export const Primary = Template.bind({})
-Primary.args = {
+export const Default = Template.bind({})
+Default.args = {
   primary: true,
-  children: 'primary',
-}
-
-export const Small = Template.bind({})
-Small.args = {
-  small: true,
-  children: 'small',
+  small: false,
+  submit: false,
+  disabled: false,
+  className: '',
+  children: 'Submit',
 }

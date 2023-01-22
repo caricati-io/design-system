@@ -14,7 +14,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "experimentalDecorators": true,
+    "jsxImportSource": "preact"
   },
-  "include": ["src", ".eslintrc.js"]
+  "include": ["src", ".eslintrc.json"]
 }

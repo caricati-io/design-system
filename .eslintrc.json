@@ -8,6 +8,8 @@
     "airbnb/hooks",
     "airbnb-typescript",
     "prettier",
+    "react-app",
+    "react-app/jest",
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended"
@@ -43,7 +45,8 @@
       "files": ["*stories.tsx"],
       "rules": {
         "react/jsx-props-no-spreading": "off",
-        "react/function-component-definition": "off"
+        "react/function-component-definition": "off",
+        "import/no-anonymous-default-export": "off"
       }
     }
   ]

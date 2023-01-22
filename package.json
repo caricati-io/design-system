@@ -2,6 +2,13 @@
   "name": "@caricati/design-system",
   "version": "0.1.0",
   "license": "MIT",
+  "source": "src/index.ts",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/caricati-io"
+  },
   "dependencies": {
     "@fontsource/poppins": "^4.5.10",
     "@types/jest": "^27.5.2",
@@ -17,30 +24,21 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "build": "react-scripts build",
+    "build": "rm -rf ./dist && BABEL_ENV=esm babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/js",
+    "build:ts": "tsc --build",
     "test": "react-scripts test",
+    "check": "CI=true npm test && npm run check:lint && npm run check:prettier && npm run check:types",
+    "check:prettier": "prettier --check './src'",
+    "check:lint": "eslint ./src",
+    "check:types": "tsc --project ./tsconfig.json --noEmit",
     "lint": "eslint src",
     "eject": "react-scripts eject",
+    "prepublishOnly": "npm run check && npm build",
     "start:demo": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "**/*.stories.*"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
-      }
-    ]
-  },
   "devDependencies": {
+    "@babel/cli": "^7.20.7",
     "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-essentials": "^6.5.13",
     "@storybook/addon-interactions": "^6.5.13",
@@ -57,6 +55,7 @@
     "@typescript-eslint/eslint-plugin": "^5.40.0",
     "@typescript-eslint/parser": "^5.40.0",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "babel-plugin-typescript-to-proptypes": "^2.0.0",
     "eslint": "^8.25.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.0.0",

@@ -14,7 +14,9 @@ import FilterSvg from './filter-svg'
 import GridDotsSvg from './grid-dots-svg'
 import ImportantSvg from './important-svg'
 import ListSvg from './list'
+import MailSvg from './mail-svg'
 import plusSvg from './plus-svg'
+import SearchSvg from './search-svg'
 import timesSvg from './times-svg'
 import TashSvg from './trash-svg'
 
@@ -27,6 +29,8 @@ export const iconMap = {
   list: ListSvg,
   plus: plusSvg,
   eye: EyeSvg,
+  mail: MailSvg,
+  search: SearchSvg,
   'eye-hide': EyeHideSvg,
   'dots-horizontal': DotsHorizontalSvg,
   'dots-vertical': DotsVerticalSvg,

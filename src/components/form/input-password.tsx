@@ -19,8 +19,6 @@ export default function InputPassword({
           onChange?.('', null)
         },
       }}
-      // disabled only to this situation
-      // eslint-disable-next-line react/jsx-props-no-spreading
       {...rest}
     />
   )

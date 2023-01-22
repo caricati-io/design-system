@@ -32,6 +32,7 @@
     "react/react-in-jsx-scope": "off",
     "react/require-default-props": "off",
     "import/no-extraneous-dependencies": "off",
+    "react/jsx-props-no-spreading": "off",
     "semi": ["error", "never"],
     "react/jsx-filename-extension": [
       1,

@@ -14,11 +14,20 @@ const Label = styled.label`
   display: inline-block;
 `
 
-const Inp = styled.input`
+const Inp = styled.input<{ hasLeftGap: boolean; hasRightGap: boolean }>`
   height: 42px;
   width: 100%;
-  padding: 0 10px;
-  border-radius: 4px;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: ${({ hasLeftGap }) => {
+    if (hasLeftGap) return '3rem'
+    return '1rem'
+  }};
+  padding-right: ${({ hasRightGap }) => {
+    if (hasRightGap) return '3rem'
+    return '1rem'
+  }};
+  border-radius: 0.25rem;
   box-sizing: border-box;
   color: ${({ theme }) => theme.color.text};
   background-color: ${({ theme }) => theme.color.input};
@@ -37,6 +46,29 @@ const Inp = styled.input`
     border-color: ${({ theme }) => theme.color.primary};
     box-shadow: ${({ theme }) => theme.shadow.btnPrimaryFocus};
   }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    border-color: ${({ theme }) => theme.color.line};
+    -webkit-text-fill-color: ${({ theme }) => theme.color.text};
+    box-shadow: 0 0 0px 1000px ${({ theme }) => theme.color.input} inset;
+    transition: background-color 5000s ease-in-out 0s;
+    transition: all ease-in-out 250ms;
+
+    &:focus {
+      border-color: ${({ theme }) => theme.color.primary};
+      box-shadow: 0 0 0px 1000px ${({ theme }) => theme.color.input} inset,
+        ${({ theme }) => theme.shadow.btnPrimaryFocus};
+    }
+  }
+`
+
+const LeftIcon = styled(Icon)`
+  color: ${({ theme }) => theme.color.inputTextDisabled};
+  position: absolute;
+  bottom: 10px;
+  left: 1rem;
 `
 
 const BtnAction = styled(ButtonClean)`
@@ -58,15 +90,19 @@ export interface Props {
   autoFocus?: boolean
   placeholder?: string
   autoComplete?: string
-  button?: {
-    icon: IconType
-    onClick: () => void
-  } | null
+  leftIcon?: IconType | null
   type: React.HTMLInputTypeAttribute
   onChange?: (
     value: string,
     event: React.ChangeEvent<HTMLInputElement> | null
   ) => void
+}
+
+interface RestrictProps {
+  button?: {
+    icon: IconType
+    onClick: () => void
+  } | null
 }
 
 export default function Input({
@@ -75,6 +111,7 @@ export default function Input({
   value,
   title,
   button,
+  leftIcon,
   required,
   onChange,
   disabled,
@@ -82,11 +119,12 @@ export default function Input({
   autoFocus,
   placeholder,
   autoComplete,
-}: Props) {
+}: Props & RestrictProps) {
   const id = useId()
   return (
     <Container>
       {title && <Label htmlFor={id}>{title}</Label>}
+      {leftIcon && <LeftIcon name={leftIcon} size={22} />}
       <Inp
         id={id}
         name={name}
@@ -96,8 +134,10 @@ export default function Input({
         required={required}
         autoFocus={autoFocus}
         maxLength={maxLength}
-        autoComplete={autoComplete}
+        hasRightGap={!!button}
+        hasLeftGap={!!leftIcon}
         placeholder={placeholder}
+        autoComplete={autoComplete}
         onChange={(e) => onChange?.(e.currentTarget.value, e)}
       />
       {button && (

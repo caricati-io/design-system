@@ -1,6 +1,7 @@
 import { useEffect, useMemo } from 'react'
 import styled from 'styled-components'
 import { keyEsc } from '../../keyboard-event'
+import Portal from '../portal'
 import { ModalProvider } from './context'
 
 const Overlay = styled.div`
@@ -44,10 +45,12 @@ export default function Modal({ width = 400, children, onClose }: Props) {
   }, [onCloseMemo])
 
   return (
-    <Overlay>
-      <ModalProvider value={{ handleClose: onCloseMemo }}>
-        <Box boxWidth={width}>{children}</Box>
-      </ModalProvider>
-    </Overlay>
+    <Portal>
+      <Overlay>
+        <ModalProvider value={{ handleClose: onCloseMemo }}>
+          <Box boxWidth={width}>{children}</Box>
+        </ModalProvider>
+      </Overlay>
+    </Portal>
   )
 }

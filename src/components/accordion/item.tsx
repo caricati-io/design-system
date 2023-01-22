@@ -1,10 +1,22 @@
 import { useContext, useId } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { keyActionClick } from '../../keyboard-event'
 import Icon from '../icon'
 import accordionContext from './context'
 
-const Container = styled.article``
+const Container = styled.article<{ isOpen: boolean }>`
+  ${({ isOpen }) =>
+    !isOpen &&
+    css`
+      &:last-child > header {
+        border-bottom: 0;
+      }
+    `}
+
+  &:last-child > div[role='region'] {
+    border-bottom: 0;
+  }
+`
 
 const Header = styled.header`
   padding: 12px 1.25rem;
@@ -47,7 +59,7 @@ export default function AccordionItem({ title, children }: Props) {
   const toggle = () => handleToggle(accordionId)
 
   return (
-    <Container>
+    <Container isOpen={isOpen}>
       <Header
         role="button"
         onClick={toggle}

@@ -1,6 +1,8 @@
+import { useEffect } from 'react'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import '@fontsource/poppins'
 import intTheme from './theme'
+import { DesignSystemProvider } from './context'
 
 const ResetStyles = createGlobalStyle`
   body {
@@ -21,15 +23,36 @@ const ResetStyles = createGlobalStyle`
 `
 
 interface Props {
-  children: React.ReactNode
+  portalId?: string
   theme?: typeof intTheme
+  children: React.ReactNode
 }
 
-export default function Provider({ theme = intTheme, children }: Props) {
+export default function Provider({
+  children,
+  theme = intTheme,
+  portalId = 'cds-portal',
+}: Props) {
+  useEffect(() => {
+    if (!document.getElementById(portalId)) {
+      const node = document.createElement('div')
+      node.setAttribute('id', portalId)
+      document.body.appendChild(node)
+    }
+    return () => {
+      const node = document.getElementById(portalId)
+      if (node?.parentNode) {
+        node.parentNode.removeChild(node)
+      }
+    }
+  }, [portalId])
+
   return (
-    <ThemeProvider theme={theme}>
-      {children}
-      <ResetStyles />
-    </ThemeProvider>
+    <DesignSystemProvider value={{ portalId }}>
+      <ThemeProvider theme={theme}>
+        {children}
+        <ResetStyles />
+      </ThemeProvider>
+    </DesignSystemProvider>
   )
 }

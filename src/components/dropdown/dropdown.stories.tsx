@@ -11,9 +11,9 @@ const Template: Story<Props> = (args) => <Dropdown {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  trigger: ({ toggle, isOpen }) => (
+  trigger: ({ toggle }) => (
     <Button primary rightIcon="chevron-down" onClick={toggle}>
-      {isOpen ? 'Close it' : 'Open it'}
+      Toggle
     </Button>
   ),
   items: [

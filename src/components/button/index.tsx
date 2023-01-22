@@ -8,7 +8,6 @@ const defaultShadow = '0 2px 4px rgba(0, 0, 0, 0.1)'
 
 const Container = styled.button<{ styleType: StyleType; sizeType: SizeType }>`
   ${({ theme, styleType, sizeType }) => css`
-    font-size: 1rem;
     border-radius: 0.625rem;
     padding: 0 1.75rem;
     cursor: pointer;
@@ -54,15 +53,17 @@ const Container = styled.button<{ styleType: StyleType; sizeType: SizeType }>`
     ${(() => {
       if (sizeType === 'small') {
         return css`
-          height: 40px;
-          line-height: 40px;
-          padding: 0 1.5rem;
+          font-size: 0.875rem;
+          height: 38px;
+          line-height: 38px;
+          padding: 0 1.375rem;
         `
       }
       return css`
-        height: 44px;
-        line-height: 44px;
-        padding: 0 1.75rem;
+        font-size: 1rem;
+        height: 42px;
+        line-height: 42px;
+        padding: 0 1.5rem;
       `
     })()}
   `}
@@ -113,7 +114,7 @@ export default function Button({
       type={submit ? 'submit' : 'button'}
     >
       {leftIcon && <LeftIcon name={leftIcon} size={20} />}
-      <span>{children}</span>
+      {children}
       {rightIcon && <RightIcon name={rightIcon} size={20} />}
     </Container>
   )

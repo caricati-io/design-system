@@ -17,6 +17,7 @@ const theme = {
     yellow: '#FFD600',
     orange: '#FA9703',
     red: '#CD3636',
+    gray: '#C5CAD2',
 
     input: '#323741',
     inputText: '#FFFFFF',
@@ -32,7 +33,7 @@ const theme = {
 
     badgeOrangeBg: 'rgba(189, 122, 20, 0.2)',
     badgeOrangeText: 'rgb(189, 122, 20)',
-    
+
     badgeRedBg: 'rgba(153, 24, 24, 0.25)',
     badgeRedText: 'rgb(215, 21, 21)',
 
@@ -47,6 +48,9 @@ const theme = {
     textLight: '#5C6372',
     selectHoverBg: '#21242A',
     selectHoverText: '#FFFFFF',
+
+    gradientFeatured:
+      'linear-gradient(144deg, rgba(31,94,255,1) 0%, rgba(88,172,22,1) 100%)',
   },
   shadows: {
     btnPrimaryFocus: '0 0 0 4px rgba(32, 94, 252, 0.5)',

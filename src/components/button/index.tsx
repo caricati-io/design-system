@@ -18,7 +18,7 @@ const Container = styled.button<{ styleType: StyleType; sizeType: SizeType }>`
     align-items: center;
 
     &:hover {
-      box-shadow: ${theme.shadows.btnHover};
+      box-shadow: ${theme.shadow.btnHover};
     }
 
     &:disabled {
@@ -30,22 +30,22 @@ const Container = styled.button<{ styleType: StyleType; sizeType: SizeType }>`
     ${(() => {
       if (styleType === 'primary') {
         return css`
-          color: ${theme.colors.primaryText};
-          background-color: ${theme.colors.primary};
+          color: ${theme.color.primaryText};
+          background-color: ${theme.color.primary};
           border: 1px solid rgba(255, 255, 255, 0.1);
 
           &:focus {
-            box-shadow: ${defaultShadow}, ${theme.shadows.btnPrimaryFocus};
+            box-shadow: ${defaultShadow}, ${theme.shadow.btnPrimaryFocus};
           }
         `
       }
       return css`
-        color: ${theme.colors.btnDefaultText};
-        background-color: ${theme.colors.btnDefault};
+        color: ${theme.color.btnDefaultText};
+        background-color: ${theme.color.btnDefault};
         border: 1px solid rgba(255, 255, 255, 0.1);
 
         &:focus {
-          box-shadow: ${defaultShadow}, ${theme.shadows.btnDefaultFocus};
+          box-shadow: ${defaultShadow}, ${theme.shadow.btnDefaultFocus};
         }
       `
     })()}

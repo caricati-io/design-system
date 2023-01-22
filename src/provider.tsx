@@ -7,14 +7,14 @@ const ResetStyles = createGlobalStyle`
     font-size: 16px;
     font-family: ${({ theme }) => theme.font.family};
     font-family: ${({ theme }) => theme.font.family};
-    color: ${({ theme }) => theme.colors.text};
-    background-color: ${({ theme }) => theme.colors.body};
+    color: ${({ theme }) => theme.color.text};
+    background-color: ${({ theme }) => theme.color.body};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   button, input, select, textarea {
-    color: ${({ theme }) => theme.colors.text};
+    color: ${({ theme }) => theme.color.text};
     font-family: ${({ theme }) => theme.font.family};
     font-size: 1rem;
   }

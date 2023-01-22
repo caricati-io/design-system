@@ -11,8 +11,8 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: ${({ theme }) => theme.colors.box};
-  border-bottom: 2px solid ${({ theme }) => theme.colors.line};
+  background-color: ${({ theme }) => theme.color.box};
+  border-bottom: 2px solid ${({ theme }) => theme.color.line};
   cursor: pointer;
 
   h3 {
@@ -25,8 +25,8 @@ const Header = styled.header`
 
 const Content = styled.div`
   padding: 20px;
-  background-color: ${({ theme }) => theme.colors.body};
-  border-bottom: 2px solid ${({ theme }) => theme.colors.line};
+  background-color: ${({ theme }) => theme.color.body};
+  border-bottom: 2px solid ${({ theme }) => theme.color.line};
 
   &[aria-hidden='true'] {
     display: none;

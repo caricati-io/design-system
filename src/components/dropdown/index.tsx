@@ -21,7 +21,7 @@ const Option = styled(ButtonClean)`
   align-items: center;
 
   &:not(:disabled):hover {
-    background-color: ${({ theme }) => theme.colors.lineLight};
+    background-color: ${({ theme }) => theme.color.lineLight};
   }
 
   &:disabled {
@@ -32,8 +32,8 @@ const Option = styled(ButtonClean)`
 
 const Box = styled.div<{ boxMaxWidth: string; boxMinWidth: string }>`
   padding: 0.5rem;
-  background-color: ${({ theme }) => theme.colors.box};
-  border: 1px solid ${({ theme }) => theme.colors.line};
+  background-color: ${({ theme }) => theme.color.box};
+  border: 1px solid ${({ theme }) => theme.color.line};
   border-radius: 0.625rem;
   position: absolute;
   top: 100%;

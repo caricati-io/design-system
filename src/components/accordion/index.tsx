@@ -5,10 +5,10 @@ import { AccordionProvider } from './context'
 const Container = styled.div`
   border-radius: 0.625rem;
   overflow: hidden;
-  border: 2px solid ${({ theme }) => theme.colors.line};
+  border: 2px solid ${({ theme }) => theme.color.line};
 
-  & > article:last-child div[role='region'] {
-    margin-bottom: 0;
+  article:last-child > div[role='region'] {
+    border-bottom: 0;
   }
 `
 

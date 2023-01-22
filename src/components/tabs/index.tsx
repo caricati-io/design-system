@@ -7,8 +7,8 @@ const Container = styled.div<{ isFilled: boolean }>`
   padding: 0 0.5rem;
   display: flex;
   align-items: center;
-  background-color: ${({ theme }) => theme.colors.body};
-  border: 2px solid ${({ theme }) => theme.colors.line};
+  background-color: ${({ theme }) => theme.color.body};
+  border: 2px solid ${({ theme }) => theme.color.line};
 
   ${({ isFilled }) =>
     isFilled &&
@@ -26,8 +26,8 @@ const TabItem = styled.button<{ isSelected: boolean }>`
   line-height: 2.75rem;
   padding: 0 1.75rem;
   background-color: ${({ theme, isSelected }) =>
-    isSelected ? theme.colors.btnDefault : 'transparent'};
-  color: ${({ theme }) => theme.colors.btnDefaultText};
+    isSelected ? theme.color.btnDefault : 'transparent'};
+  color: ${({ theme }) => theme.color.btnDefaultText};
   border: none;
   border-radius: 0.625rem;
   cursor: pointer;
@@ -40,11 +40,11 @@ const TabItem = styled.button<{ isSelected: boolean }>`
 
   &:disabled {
     cursor: default;
-    color: ${({ theme }) => theme.colors.btnDefaultTextDisabled};
+    color: ${({ theme }) => theme.color.btnDefaultTextDisabled};
   }
 
   &:not(:disabled):hover {
-    background-color: ${({ theme }) => theme.colors.btnDefault};
+    background-color: ${({ theme }) => theme.color.btnDefault};
   }
 `
 

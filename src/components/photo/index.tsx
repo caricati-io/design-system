@@ -18,14 +18,14 @@ const Container = styled.figure<ContainerProps>`
 
     ${isFeatured &&
     css`
-      background: ${theme.colors.gradientFeatured};
+      background: ${theme.color.gradientFeatured};
       padding: ${imgSize / (16 * 32)}rem;
       box-sizing: border-box;
 
       & > div {
         box-sizing: border-box;
         padding: ${imgSize / (16 * 22)}rem;
-        background-color: ${theme.colors.body};
+        background-color: ${theme.color.body};
       }
     `}
 
@@ -42,18 +42,18 @@ const Container = styled.figure<ContainerProps>`
 
         background-color: ${(() => {
           if (photoStatus === 'away') {
-            return theme.colors.yellow
+            return theme.color.yellow
           }
           if (photoStatus === 'busy') {
-            return theme.colors.red
+            return theme.color.red
           }
           if (photoStatus === 'offline') {
-            return theme.colors.gray
+            return theme.color.gray
           }
           if (photoStatus === 'online') {
-            return theme.colors.green
+            return theme.color.green
           }
-          return theme.colors.gray
+          return theme.color.gray
         })()};
       }
     `}
@@ -76,8 +76,8 @@ const Container = styled.figure<ContainerProps>`
 
 const Counter = styled.span<{ imgSize: number }>`
   padding: 0 ${({ imgSize }) => `${imgSize / (16 * 8)}rem`};
-  color: ${({ theme }) => theme.colors.text};
-  background-color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.color.text};
+  background-color: ${({ theme }) => theme.color.primary};
   position: absolute;
   bottom: 0;
   right: 0;

@@ -18,7 +18,7 @@ const Box = styled.div<{ boxWidth: number }>`
   width: 100%;
   max-width: ${({ boxWidth }) => `${boxWidth / 16}rem`};
   margin: 2rem auto 2rem;
-  background-color: ${({ theme }) => theme.colors.body};
+  background-color: ${({ theme }) => theme.color.body};
   border-radius: 0.625rem;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1), 0 2px 1rem 0 rgba(0, 0, 0, 0.25);
 `

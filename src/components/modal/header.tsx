@@ -8,7 +8,7 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: minmax(0, 1fr) 26px;
   padding: 1.25rem 1.25rem 0.625rem;
-  border-bottom: 2px solid ${({ theme }) => theme.colors.lineLight};
+  border-bottom: 2px solid ${({ theme }) => theme.color.lineLight};
   justify-content: space-between;
 
   h2 {

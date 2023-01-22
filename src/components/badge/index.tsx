@@ -19,35 +19,35 @@ const Container = styled(ButtonClean)<ContainerProps>`
   ${({ badgeColor, theme }) => {
     if (badgeColor === 'yellow') {
       return css`
-        color: ${theme.colors.badgeYellowText};
-        background-color: ${theme.colors.badgeYellowBg};
+        color: ${theme.color.badgeYellowText};
+        background-color: ${theme.color.badgeYellowBg};
       `
     }
 
     if (badgeColor === 'red') {
       return css`
-        color: ${theme.colors.badgeRedText};
-        background-color: ${theme.colors.badgeRedBg};
+        color: ${theme.color.badgeRedText};
+        background-color: ${theme.color.badgeRedBg};
       `
     }
 
     if (badgeColor === 'orange') {
       return css`
-        color: ${theme.colors.badgeOrangeText};
-        background-color: ${theme.colors.badgeOrangeBg};
+        color: ${theme.color.badgeOrangeText};
+        background-color: ${theme.color.badgeOrangeBg};
       `
     }
 
     if (badgeColor === 'blue') {
       return css`
-        color: ${theme.colors.badgeBlueText};
-        background-color: ${theme.colors.badgeBlueBg};
+        color: ${theme.color.badgeBlueText};
+        background-color: ${theme.color.badgeBlueBg};
       `
     }
 
     return css`
-      color: ${theme.colors.badgeGreenText};
-      background-color: ${theme.colors.badgeGreenBg};
+      color: ${theme.color.badgeGreenText};
+      background-color: ${theme.color.badgeGreenBg};
     `
   }}
 `

@@ -2,7 +2,7 @@ const theme = {
   font: {
     family: "'Poppins', sans-serif",
   },
-  colors: {
+  color: {
     primary: '#1F5EFF',
     primaryFocus: '#336CFF',
     primaryText: '#FFFFFF',
@@ -52,7 +52,7 @@ const theme = {
     gradientFeatured:
       'linear-gradient(144deg, rgba(31,94,255,1) 0%, rgba(88,172,22,1) 100%)',
   },
-  shadows: {
+  shadow: {
     btnPrimaryFocus: '0 0 0 4px rgba(32, 94, 252, 0.5)',
     btnSecondaryFocus: '0 0 0 4px rgba(50, 55, 65, 0.5)',
     btnDefaultFocus: '0 0 0 4px rgba(62, 67, 78, 0.5)',

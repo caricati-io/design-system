@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import bellSvg from './bell-svg'
+import checkSvg from './check-svg'
 import chevronDownSvg from './chevron-down-svg'
 import chevronLeftSvg from './chevron-left-svg'
 import chevronRightSvg from './chevron-right-svg'
@@ -13,6 +14,7 @@ import EyeSvg from './eye-svg'
 import FilterSvg from './filter-svg'
 import GridDotsSvg from './grid-dots-svg'
 import ImportantSvg from './important-svg'
+import KeySvg from './key-svg'
 import ListSvg from './list'
 import MailSvg from './mail-svg'
 import plusSvg from './plus-svg'
@@ -23,6 +25,7 @@ import TashSvg from './trash-svg'
 export const iconMap = {
   bell: bellSvg,
   filter: FilterSvg,
+  check: checkSvg,
   important: ImportantSvg,
   times: timesSvg,
   trash: TashSvg,
@@ -30,6 +33,7 @@ export const iconMap = {
   plus: plusSvg,
   eye: EyeSvg,
   mail: MailSvg,
+  key: KeySvg,
   search: SearchSvg,
   'eye-hide': EyeHideSvg,
   'dots-horizontal': DotsHorizontalSvg,

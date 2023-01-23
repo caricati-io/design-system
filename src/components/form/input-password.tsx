@@ -1,10 +1,9 @@
 import { useState } from 'react'
-import Input, { Props } from './input'
+import Input, { Props as InputProps } from './input'
 
-export default function InputPassword({
-  onChange,
-  ...rest
-}: Omit<Props, 'type'>) {
+export type Props = Omit<InputProps, 'type' | 'autoComplete' | 'button'>
+
+export default function InputPassword({ onChange, ...rest }: Props) {
   const [isShowPassword, setIsShowPassword] = useState(false)
 
   return (

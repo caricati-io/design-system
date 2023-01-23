@@ -38,12 +38,24 @@ const Box = styled.div<{ boxMaxWidth: string; boxMinWidth: string }>`
   position: absolute;
   top: 100%;
   left: 0;
-  transform: translateY(0.625rem);
+  animation: slideDown ease 300ms;
+  transform: translateY(0.5rem);
 
   ${({ boxMaxWidth, boxMinWidth }) => css`
     max-width: ${boxMaxWidth};
     min-width: ${boxMinWidth};
   `}
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-0.5rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0.5rem);
+    }
+  }
 `
 
 const OptionIcon = styled(Icon)`

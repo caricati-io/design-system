@@ -5,32 +5,46 @@ import styled, {
 } from 'styled-components'
 
 import Provider from './provider'
+import * as keyboardEvent from './keyboard-event'
+
 import Tabs from './components/tabs'
+import Photo from './components/photo'
+import Badge from './components/badge'
+import Modal from './components/modal'
 import Button from './components/button'
 import Dropdown from './components/dropdown'
-import * as keyboardEvent from './keyboard-event'
-import ClickOutside from './components/click-outside'
-import Icon, { IconType } from './components/icon'
 import Accordion from './components/accordion'
-import AccordionItem from './components/accordion/item'
-import Badge from './components/badge'
-import ButtonGroup from './components/button-group'
-import Modal from './components/modal'
 import ModalBody from './components/modal/body'
 import ModalFooter from './components/modal/footer'
 import ModalHeader from './components/modal/header'
-import Photo from './components/photo'
+import ButtonGroup from './components/button-group'
+import ClickOutside from './components/click-outside'
+import AccordionItem from './components/accordion/item'
+import Icon, { IconType } from './components/icon'
 
-export type {
-  IconType
-}
+// forms
+import Radio from './components/form/radio'
+import FormRow from './components/form/row'
+import Select from './components/form/select'
+import Toggle from './components/form/toggle'
+import Textarea from './components/form/textarea'
+import InputText from './components/form/input-text'
+import InputEmail from './components/form/input-email'
+import InputSearch from './components/form/input-search'
+import InputPassword from './components/form/input-password'
+
+export type { IconType }
 
 const lib = {
   styled,
   useTheme,
   ServerStyleSheet,
   StyleSheetManager,
+  ClickOutside,
+  keyboardEvent,
+  Provider,
 
+  // Components init
   Accordion,
   AccordionItem,
   Badge,
@@ -44,9 +58,17 @@ const lib = {
   ModalHeader,
   Photo,
   Tabs,
-  ClickOutside,
-  keyboardEvent,
-  Provider,
+
+  // Forms
+  InputText,
+  InputEmail,
+  InputPassword,
+  InputSearch,
+  Radio,
+  FormRow,
+  Select,
+  Textarea,
+  Toggle,
 }
 
 export default lib

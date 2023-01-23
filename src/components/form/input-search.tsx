@@ -1,6 +1,6 @@
 import Input, { Props as InputProps } from './input'
 
-interface Props extends Omit<InputProps, 'type'> {
+export interface Props extends Omit<InputProps, 'type'> {
   hasSearchIcon?: boolean
 }
 

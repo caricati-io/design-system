@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import '@fontsource/poppins'
+import '@fontsource/poppins/500.css'
+import '@fontsource/poppins/400.css'
 import intTheme from './theme'
 import { DesignSystemProvider } from './context'
 
@@ -13,12 +14,47 @@ const ResetStyles = createGlobalStyle`
     background-color: ${({ theme }) => theme.color.body};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
   }
 
   button, input, select, textarea {
     color: ${({ theme }) => theme.color.text};
     font-family: ${({ theme }) => theme.font.family};
     font-size: 1rem;
+  }
+
+  figure, h1, h2, h3, h4, h5, h6, p, ul, ol, li, article, section, img, button {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  h5 {
+    font-size: 1.25rem;
+  }
+
+  h6 {
+    font-size: 1rem;
+  }
+
+  a {
+    color: ${({ theme }) => theme.color.link};
+    text-decoration: underline;
   }
 `
 

@@ -11,7 +11,7 @@ const Container = styled.button<{ styleType: StyleType; sizeType: SizeType }>`
     border-radius: 0.625rem;
     padding: 0 1.75rem;
     cursor: pointer;
-    font-weight: 700;
+    font-weight: 500;
     box-shadow: ${defaultShadow};
     transition: all ease-in-out 250ms;
     display: flex;

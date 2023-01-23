@@ -21,9 +21,13 @@ const theme = {
 
     input: '#323741',
     inputText: '#FFFFFF',
-    inputTextDisabled: '#636873',
+    inputTextDisabled: '#8a8f99',
+    inputError: '#651F1F',
+    inputLineError: '#B01B1B',
+    inputTextError: '#DE7C7C',
 
     box: '#323741',
+    boxLight: '#7B849C',
     line: '#3D424D',
     lineLight: '#282B32',
     lineHover: '#474D5B',
@@ -45,7 +49,9 @@ const theme = {
 
     body: '#21242A',
     text: '#FFFFFF',
+    link: '#336CFF',
     textLight: '#5C6372',
+    placeholder: '#5C6372',
     selectHoverBg: '#21242A',
     selectHoverText: '#FFFFFF',
 
@@ -56,6 +62,7 @@ const theme = {
     btnPrimaryFocus: '0 0 0 4px rgba(32, 94, 252, 0.5)',
     btnSecondaryFocus: '0 0 0 4px rgba(50, 55, 65, 0.5)',
     btnDefaultFocus: '0 0 0 4px rgba(62, 67, 78, 0.5)',
+    errorFocus: '0 0 0 4px rgba(176, 27, 27, 0.3)',
     btnHover: '0 2px 0.5rem 1px rgba(0, 0, 0, 0.3)',
   },
 }

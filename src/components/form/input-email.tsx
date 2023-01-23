@@ -1,5 +1,7 @@
-import Input, { Props } from './input'
+import Input, { Props as InputProps } from './input'
 
-export default function InputEmail(props: Omit<Props, 'type'>) {
+export type Props = Omit<InputProps, 'type'>
+
+export default function InputEmail(props: Props) {
   return <Input type="email" {...props} />
 }

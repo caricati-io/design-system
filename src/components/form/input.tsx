@@ -2,6 +2,7 @@ import React, { useId } from 'react'
 import styled from 'styled-components'
 import ButtonClean from '../button/clean'
 import Icon, { IconType } from '../icon'
+import inputStyled from './input.styled'
 
 const Container = styled.div`
   position: relative;
@@ -16,7 +17,6 @@ const Label = styled.label`
 
 const Inp = styled.input<{ hasLeftGap: boolean; hasRightGap: boolean }>`
   height: 42px;
-  width: 100%;
   padding-top: 0;
   padding-bottom: 0;
   padding-left: ${({ hasLeftGap }) => {
@@ -27,41 +27,7 @@ const Inp = styled.input<{ hasLeftGap: boolean; hasRightGap: boolean }>`
     if (hasRightGap) return '3rem'
     return '1rem'
   }};
-  border-radius: 0.25rem;
-  box-sizing: border-box;
-  color: ${({ theme }) => theme.color.text};
-  background-color: ${({ theme }) => theme.color.input};
-  border: 1px solid ${({ theme }) => theme.color.line};
-  outline: none;
-  transition: all ease-in-out 250ms;
-
-  &:disabled {
-  }
-
-  &::placeholder {
-    color: ${({ theme }) => theme.color.textLight};
-  }
-
-  &:focus {
-    border-color: ${({ theme }) => theme.color.primary};
-    box-shadow: ${({ theme }) => theme.shadow.btnPrimaryFocus};
-  }
-
-  &:-webkit-autofill,
-  &:-webkit-autofill:hover,
-  &:-webkit-autofill:focus {
-    border-color: ${({ theme }) => theme.color.line};
-    -webkit-text-fill-color: ${({ theme }) => theme.color.text};
-    box-shadow: 0 0 0px 1000px ${({ theme }) => theme.color.input} inset;
-    transition: background-color 5000s ease-in-out 0s;
-    transition: all ease-in-out 250ms;
-
-    &:focus {
-      border-color: ${({ theme }) => theme.color.primary};
-      box-shadow: 0 0 0px 1000px ${({ theme }) => theme.color.input} inset,
-        ${({ theme }) => theme.shadow.btnPrimaryFocus};
-    }
-  }
+  ${inputStyled}
 `
 
 const LeftIcon = styled(Icon)`
@@ -82,7 +48,7 @@ const BtnAction = styled(ButtonClean)`
 
 export interface Props {
   name?: string
-  title?: string
+  label?: string
   value?: string
   required?: boolean
   disabled?: boolean
@@ -109,7 +75,7 @@ export default function Input({
   name,
   type,
   value,
-  title,
+  label,
   button,
   leftIcon,
   required,
@@ -123,7 +89,7 @@ export default function Input({
   const id = useId()
   return (
     <Container>
-      {title && <Label htmlFor={id}>{title}</Label>}
+      {label && <Label htmlFor={id}>{label}</Label>}
       {leftIcon && <LeftIcon name={leftIcon} size={22} />}
       <Inp
         id={id}

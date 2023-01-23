@@ -35,7 +35,7 @@
     "eject": "react-scripts eject",
     "prepublishOnly": "npm run check && npm build",
     "start:demo": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build:storybook": "build-storybook"
   },
   "devDependencies": {
     "@babel/cli": "^7.20.7",

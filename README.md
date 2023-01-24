@@ -1,17 +1,20 @@
-<center>
-  <img src="./.storybook/logo.svg" alt="Caricati.io - Design System" />
-  <br />
-  <div>
-    <a href="https://caricati-ds.netlify.app/" target="_blank">
-      <img src="https://img.shields.io/badge/weiste-demo-blue" alt="demo">
-    </a>
-  </div>
-</center>
+<h1>⛔️ Warning!</h1>
+<h2>This library is not ready yet. Everything will be fine when version 1.0.0 is released.</h2>
+
+<hr />
+<br />
+<img src="./.storybook/logo.svg" alt="Caricati.io - Design System" width="400">
 
 This project was made in React to be lightweight and with few dependencies.
 
+<p>
+  <a href="https://caricati-ds.netlify.app/" target="_blank">
+    <img src="https://img.shields.io/badge/weiste-demo-blue" alt="demo">
+  </a>
+  <img src="https://github.com/caricati-io/design-system/actions/workflows/main.yml/badge.svg" alt="tests and build">
+</p>
 
-# Warning! This library is not ready yet. Everything will be fine when version 1.0.0 is released.
+<hr />
 
 ## Install in your React project
 First, you need to install by command line using npm or yarn:
@@ -37,7 +40,7 @@ ReactDOM.render(
 
 
 
-## Using styled-components from Design System
+## Using styled-components from library
 
 ```
 import { styled, useTheme } from '@caricati/design-system'

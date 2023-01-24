@@ -4,8 +4,11 @@ import ButtonClean from '../button/clean'
 import ClickOutside from '../click-outside'
 import Icon, { IconType } from '../icon'
 
+type XAxis = 'left' | 'right'
+
 const Container = styled(ClickOutside)`
   position: relative;
+  display: inline-block;
 `
 
 const Option = styled(ButtonClean)`
@@ -30,16 +33,31 @@ const Option = styled(ButtonClean)`
   }
 `
 
-const Box = styled.div<{ boxMaxWidth: string; boxMinWidth: string }>`
+const Box = styled.div<{
+  xAxis: XAxis
+  boxMaxWidth: string
+  boxMinWidth: string
+  triggerDistance: number
+}>`
   padding: 0.5rem;
   background-color: ${({ theme }) => theme.color.box};
   border: 1px solid ${({ theme }) => theme.color.line};
   border-radius: 0.625rem;
   position: absolute;
   top: 100%;
-  left: 0;
   animation: slideDown ease 300ms;
-  transform: translateY(0.5rem);
+  transform: translateY(
+    ${({ triggerDistance }) => `${triggerDistance / 16}rem`}
+  );
+
+  ${({ xAxis }) =>
+    xAxis === 'left'
+      ? css`
+          right: 0;
+        `
+      : css`
+          left: 0;
+        `};
 
   ${({ boxMaxWidth, boxMinWidth }) => css`
     max-width: ${boxMaxWidth};
@@ -49,11 +67,15 @@ const Box = styled.div<{ boxMaxWidth: string; boxMinWidth: string }>`
   @keyframes slideDown {
     from {
       opacity: 0;
-      transform: translateY(-0.5rem);
+      transform: translateY(
+        -${({ triggerDistance }) => `${triggerDistance / 16}rem`}
+      );
     }
     to {
       opacity: 1;
-      transform: translateY(0.5rem);
+      transform: translateY(
+        ${({ triggerDistance }) => `${triggerDistance / 16}rem`}
+      );
     }
   }
 `
@@ -72,6 +94,12 @@ interface ActionParams {
 }
 
 export interface Props {
+  xAxis?: XAxis
+  maxWidth?: string
+  minWidth?: string
+  triggerDistance?: number
+  isOpenByDefault?: boolean
+  trigger(params: ActionParams): React.ReactElement
   items: {
     id: ID
     label: string
@@ -79,17 +107,15 @@ export interface Props {
     disabled?: boolean
     onClick?: (params: ActionParams) => null
   }[]
-  maxWidth?: string
-  minWidth?: string
-  isOpenByDefault?: boolean
-  trigger(params: ActionParams): React.ReactElement
 }
 
 export default function Dropdown({
   items,
   trigger,
-  maxWidth = '240px',
-  minWidth = '220px',
+  xAxis = 'right',
+  maxWidth = 'auto',
+  minWidth = '210px',
+  triggerDistance = 8,
   isOpenByDefault = false,
 }: Props) {
   const [isOpen, setIsOpen] = useState(isOpenByDefault)
@@ -104,7 +130,12 @@ export default function Dropdown({
     <Container onOutside={handleClose}>
       {trigger(actions)}
       {isOpen && (
-        <Box boxMaxWidth={maxWidth} boxMinWidth={minWidth}>
+        <Box
+          xAxis={xAxis}
+          boxMaxWidth={maxWidth}
+          boxMinWidth={minWidth}
+          triggerDistance={triggerDistance}
+        >
           {items?.map((item) => (
             <Option
               type="button"

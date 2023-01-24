@@ -11,14 +11,17 @@ import Tabs from './components/tabs'
 import Photo from './components/photo'
 import Badge from './components/badge'
 import Modal from './components/modal'
+import Panel from './components/panel'
 import Button from './components/button'
+import Tooltip from './components/tooltip'
 import Dropdown from './components/dropdown'
 import Accordion from './components/accordion'
 import ModalBody from './components/modal/body'
 import ModalFooter from './components/modal/footer'
 import ModalHeader from './components/modal/header'
 import ButtonGroup from './components/button-group'
-import ClickOutside from './components/click-outside'
+import PanelBody from './components/panel/body'
+import PanelHeader from './components/panel/header'
 import AccordionItem from './components/accordion/item'
 import Icon, { IconType } from './components/icon'
 
@@ -40,7 +43,6 @@ const lib = {
   useTheme,
   ServerStyleSheet,
   StyleSheetManager,
-  ClickOutside,
   keyboardEvent,
   Provider,
 
@@ -56,8 +58,12 @@ const lib = {
   ModalBody,
   ModalFooter,
   ModalHeader,
+  Tooltip,
   Photo,
   Tabs,
+  Panel,
+  PanelBody,
+  PanelHeader,
 
   // Forms
   InputText,

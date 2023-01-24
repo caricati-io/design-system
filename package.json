@@ -9,6 +9,19 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/caricati-io"
   },
+  "scripts": {
+    "build": "rm -rf ./dist && BABEL_ENV=esm babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/js",
+    "test": "react-scripts test",
+    "check": "CI=true npm test && npm run check:lint && npm run check:prettier && npm run check:types",
+    "check:prettier": "prettier --check './src'",
+    "check:lint": "eslint ./src",
+    "check:types": "tsc --project ./tsconfig.json --noEmit",
+    "lint": "eslint src",
+    "eject": "react-scripts eject",
+    "prepublishOnly": "npm run check && npm build",
+    "start:demo": "start-storybook -p 6006 -s public",
+    "build:storybook": "build-storybook"
+  },
   "dependencies": {
     "@fontsource/poppins": "^4.5.10",
     "@types/jest": "^27.5.2",
@@ -23,31 +36,17 @@
     "typescript": "^4.8.4",
     "web-vitals": "^2.1.4"
   },
-  "scripts": {
-    "build": "rm -rf ./dist && BABEL_ENV=esm babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/js",
-    "build:ts": "tsc --build",
-    "test": "react-scripts test",
-    "check": "CI=true npm test && npm run check:lint && npm run check:prettier && npm run check:types",
-    "check:prettier": "prettier --check './src'",
-    "check:lint": "eslint ./src",
-    "check:types": "tsc --project ./tsconfig.json --noEmit",
-    "lint": "eslint src",
-    "eject": "react-scripts eject",
-    "prepublishOnly": "npm run check && npm build",
-    "start:demo": "start-storybook -p 6006 -s public",
-    "build:storybook": "build-storybook"
-  },
   "devDependencies": {
     "@babel/cli": "^7.20.7",
-    "@storybook/addon-actions": "^6.5.13",
-    "@storybook/addon-essentials": "^6.5.13",
-    "@storybook/addon-interactions": "^6.5.13",
-    "@storybook/addon-links": "^6.5.13",
-    "@storybook/builder-webpack5": "^6.5.13",
-    "@storybook/manager-webpack5": "^6.5.13",
-    "@storybook/node-logger": "^6.5.13",
+    "@storybook/addon-actions": "^6.5.15",
+    "@storybook/addon-essentials": "^6.5.15",
+    "@storybook/addon-interactions": "^6.5.15",
+    "@storybook/addon-links": "^6.5.15",
+    "@storybook/builder-webpack5": "^6.5.15",
+    "@storybook/manager-webpack5": "^6.5.15",
+    "@storybook/node-logger": "^6.5.15",
     "@storybook/preset-create-react-app": "^4.1.2",
-    "@storybook/react": "^6.5.13",
+    "@storybook/react": "^6.5.15",
     "@storybook/testing-library": "^0.0.13",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -65,6 +64,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-storybook": "^0.6.10",
     "prettier": "2.7.1",
     "prop-types": "^15.8.1",
     "webpack": "^5.74.0"

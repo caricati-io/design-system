@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import '@fontsource/poppins/500.css'
+import '@fontsource/poppins/600.css'
 import '@fontsource/poppins/400.css'
 import intTheme from './theme'
 import { DesignSystemProvider } from './context'
@@ -26,6 +27,10 @@ const ResetStyles = createGlobalStyle`
   figure, h1, h2, h3, h4, h5, h6, p, ul, ol, li, article, section, img, button {
     margin: 0;
     padding: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
   }
 
   h1 {
@@ -70,6 +75,7 @@ export default function Provider({
   portalId = 'cds-portal',
 }: Props) {
   useEffect(() => {
+    // create element for portals
     if (!document.getElementById(portalId)) {
       const node = document.createElement('div')
       node.setAttribute('id', portalId)

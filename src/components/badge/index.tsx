@@ -10,7 +10,7 @@ interface ContainerProps {
 const Container = styled(ButtonClean)<ContainerProps>`
   height: 2rem;
   padding: 0 1rem;
-  border-radius: 0.625rem;
+  border-radius: 0.375rem;
   display: inline-flex;
   align-items: center;
 
@@ -56,7 +56,7 @@ const RightIcon = styled(Icon)`
   margin-left: 8px;
 `
 
-type BadgeColor = 'green' | 'yellow' | 'red' | 'orange' | 'blue'
+export type BadgeColor = 'green' | 'yellow' | 'red' | 'orange' | 'blue'
 
 export interface Props {
   color?: 'green' | 'yellow' | 'red'

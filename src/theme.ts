@@ -12,6 +12,9 @@ const theme = {
     btnDefaultText: '#FFFFFF',
     btnDefaultTextDisabled: '#6c727a',
 
+    btnGhostText: '#FFFFFF',
+    btnGhostHover: 'rgba(0, 0, 0, 0.25)',
+
     blue: '#205EFC',
     green: '#58AC16',
     yellow: '#FFD600',
@@ -27,10 +30,12 @@ const theme = {
     inputTextError: '#DE7C7C',
 
     box: '#323741',
+    boxDanger: '#651F1F',
     boxLight: '#7B849C',
     line: '#3D424D',
     lineLight: '#282B32',
     lineHover: '#474D5B',
+    lineDanger: '#991818',
 
     badgeBlueBg: 'rgba(18, 131, 185, 0.2)',
     badgeBlueText: 'rgb(10, 157, 227)',

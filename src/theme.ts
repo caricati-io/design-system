@@ -30,11 +30,13 @@ const theme = {
     inputTextError: '#DE7C7C',
 
     box: '#323741',
-    boxDanger: '#651F1F',
     boxLight: '#7B849C',
     line: '#3D424D',
     lineLight: '#282B32',
     lineHover: '#474D5B',
+
+    textDanger: '#DE7C7C',
+    boxDanger: '#651F1F',
     lineDanger: '#991818',
 
     badgeBlueBg: 'rgba(18, 131, 185, 0.2)',

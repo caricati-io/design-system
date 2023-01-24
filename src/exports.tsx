@@ -44,7 +44,7 @@ const lib = {
   ServerStyleSheet,
   StyleSheetManager,
   keyboardEvent,
-  Provider,
+  DesignSystemProvider: Provider,
 
   // Components init
   Accordion,

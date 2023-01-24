@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import styled from 'styled-components'
+import Icon, { IconType } from '../icon'
 import panelContext from './context'
 
 const Header = styled.div<{ danger: boolean }>`
@@ -18,6 +19,8 @@ const Header = styled.div<{ danger: boolean }>`
   h3 {
     font-size: 1rem;
     font-weight: 600;
+    display: flex;
+    align-items: center;
   }
 `
 
@@ -30,16 +33,26 @@ const Right = styled.div`
   }
 `
 
+const LeftIcon = styled(Icon)<{ isDanger: boolean }>`
+  color: ${({ theme, isDanger }) =>
+    isDanger ? theme.color.textDanger : theme.color.textLight};
+  margin-right: 1rem;
+`
+
 export interface Props {
   title: string
+  icon?: IconType
   children?: React.ReactNode
 }
 
-export default function PanelHeader({ title, children }: Props) {
+export default function PanelHeader({ title, icon, children }: Props) {
   const { danger } = useContext(panelContext)
   return (
     <Header danger={danger}>
-      <h3>{title}</h3>
+      <h3>
+        {icon && <LeftIcon isDanger={danger} name={icon} size={20} />}
+        {title}
+      </h3>
       <Right>{children}</Right>
     </Header>
   )

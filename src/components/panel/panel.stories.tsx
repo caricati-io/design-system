@@ -12,12 +12,6 @@ import PanelHeader from './header'
 export default {
   title: 'Components/Panel',
   component: Panel,
-  // argTypes: {
-  //   error: {
-  //     options: ['left', 'right'],
-  //     control: { type: 'select' },
-  //   },
-  // },
 }
 
 const Template: Story<Props> = (args) => (
@@ -31,7 +25,7 @@ Default.args = {
   danger: false,
   children: (
     <>
-      <PanelHeader title="Heading" />
+      <PanelHeader title="Heading" icon="mail" />
       <PanelBody>Panel body</PanelBody>
     </>
   ),

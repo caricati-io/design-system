@@ -1,5 +1,5 @@
-<h1>⛔️ Warning!</h1>
-<h2>This library is not ready yet. Everything will be fine when version 1.0.0 is released.</h2>
+# ⛔️ Warning!
+This library is not ready yet. Everything will be fine when version 1.0.0 is released.
 
 <hr />
 <br />
@@ -8,8 +8,14 @@
 This project was made in React to be lightweight and with few dependencies.
 
 <p>
-  <a href="https://caricati-ds.netlify.app/" target="_blank">
-    <img src="https://img.shields.io/badge/weiste-demo-blue" alt="demo">
+  <a href="https://caricati-ds.netlify.app/">
+    <img src="https://img.shields.io/badge/weiste-demo-205EFC" alt="demo">
+  </a>
+  <a href="https://www.npmjs.com/package/@caricati/design-system">
+    <img src="https://img.shields.io/badge/package-npm-FA9703" alt="npm">
+  </a>
+  <a href="./LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-292F3A" alt="MIT">
   </a>
   <img src="https://github.com/caricati-io/design-system/actions/workflows/main.yml/badge.svg" alt="tests and build">
 </p>

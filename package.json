@@ -12,7 +12,7 @@
   "scripts": {
     "build": "rm -rf ./dist && BABEL_ENV=esm babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/js",
     "test": "react-scripts test",
-    "check": "CI=true npm test && npm run check:lint && npm run check:prettier && npm run check:types",
+    "check": "CI=true npm test && npm run check:lint && npm run check:types",
     "check:prettier": "prettier --check './src'",
     "check:lint": "eslint ./src",
     "check:types": "tsc --project ./tsconfig.json --noEmit",

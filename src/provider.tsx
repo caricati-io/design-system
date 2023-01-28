@@ -5,6 +5,7 @@ import '@fontsource/poppins/600.css'
 import '@fontsource/poppins/400.css'
 import intTheme from './theme'
 import { DesignSystemProvider } from './context'
+import ToastProvider from './components/toast/provider'
 
 const ResetStyles = createGlobalStyle`
   body {
@@ -92,8 +93,10 @@ export default function Provider({
   return (
     <DesignSystemProvider value={{ portalId }}>
       <ThemeProvider theme={theme}>
-        {children}
-        <ResetStyles />
+        <ToastProvider>
+          {children}
+          <ResetStyles />
+        </ToastProvider>
       </ThemeProvider>
     </DesignSystemProvider>
   )

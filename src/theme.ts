@@ -22,6 +22,11 @@ const theme = {
     red: '#CD3636',
     gray: '#C5CAD2',
 
+    errorBg: '#651F1F',
+    infoBg: '#25546F',
+    successBg: '#21652A',
+    warningBg: '#635A27',
+
     input: '#323741',
     inputText: '#FFFFFF',
     inputTextDisabled: '#8a8f99',
@@ -70,6 +75,7 @@ const theme = {
     btnSecondaryFocus: '0 0 0 4px rgba(50, 55, 65, 0.5)',
     btnDefaultFocus: '0 0 0 4px rgba(62, 67, 78, 0.5)',
     errorFocus: '0 0 0 4px rgba(176, 27, 27, 0.3)',
+    toast: '0 2px 0.5rem 1px rgba(0, 0, 0, 0.3)',
     btnHover: '0 2px 0.5rem 1px rgba(0, 0, 0, 0.3)',
   },
 }

@@ -4,7 +4,7 @@ import styled, {
   StyleSheetManager,
 } from 'styled-components'
 
-import Provider from './provider'
+import Install from './install'
 import * as keyboardEvent from './keyboard-event'
 
 import Tabs from './components/tabs'
@@ -44,7 +44,7 @@ const lib = {
   ServerStyleSheet,
   StyleSheetManager,
   keyboardEvent,
-  DesignSystemProvider: Provider,
+  InstallDesignSystem: Install,
 
   // Components init
   Accordion,

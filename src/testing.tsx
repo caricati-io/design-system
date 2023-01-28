@@ -1,12 +1,12 @@
 import { render } from '@testing-library/react'
-import Provider from './provider'
+import Install from './install'
 
 interface Props {
   children: React.ReactNode
 }
 
 function AllTheProviders({ children }: Props) {
-  return <Provider>{children}</Provider>
+  return <Install>{children}</Install>
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

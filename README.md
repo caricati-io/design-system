@@ -29,16 +29,16 @@ First, you need to install by command line using npm or yarn:
 npm install @caricati/design-system --save
 ```
 
-and then, install the `<DesignSystemProvider />` in your root component:
+and then, install the `<InstallDesignSystem />` in your root component:
 
 ```
-import { DesignSystemProvider } from '@caricati/design-system'
+import { InstallDesignSystem } from '@caricati/design-system'
 ...
 ReactDOM.render(
   <React.StrictMode>
-    <DesignSystemProvider>
+    <InstallDesignSystem>
       <App />
-    </DesignSystemProvider>
+    </InstallDesignSystem>
   </React.StrictMode>,
   document.getElementById('root'),
 )

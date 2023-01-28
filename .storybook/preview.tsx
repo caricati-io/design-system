@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Provider from '../src/provider'
+import Install from '../src/install'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -14,8 +14,8 @@ export const parameters = {
 
 export const decorators = [
   (Story) => (
-    <Provider>
+    <Install>
       <Story />
-    </Provider>
+    </Install>
   ),
 ]

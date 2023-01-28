@@ -70,7 +70,7 @@ interface Props {
   children: React.ReactNode
 }
 
-export default function Provider({
+export default function Install({
   children,
   theme = intTheme,
   portalId = 'cds-portal',

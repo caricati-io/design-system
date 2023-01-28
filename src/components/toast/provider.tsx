@@ -18,12 +18,7 @@ export default function ToastProvider({ children }: Props) {
   const add = useCallback(
     (toast: Toast) => {
       setItems((state) => [...state, toast])
-      setTimeout(() => {
-        // const element = document.getElementById(`toast_${toast.id}`)
-        // element?.style.transform = 'translateX(100%)'
-        // element?.style = {}
-        remove(toast.id)
-      }, duration)
+      setTimeout(() => remove(toast.id), duration)
     },
     [remove, duration]
   )

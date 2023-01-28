@@ -1,0 +1,6 @@
+{
+  "moduleNameMapper": {
+    "\\.(css|jpg|png)$": "<rootDir>/config/jest/empty-module.ts"
+  },
+  "setupFilesAfterEnv": ["<rootDir>/config/jest/setup.ts"]
+}

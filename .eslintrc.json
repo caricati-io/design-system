@@ -10,7 +10,8 @@
     "prettier",
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:styled-components-a11y/recommended"
   ],
   "settings": {
     "import/resolver": {
@@ -25,7 +26,7 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["react", "styled-components-a11y", "@typescript-eslint"],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "react/require-default-props": "off",

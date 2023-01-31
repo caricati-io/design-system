@@ -1,7 +1,7 @@
-import { KeyboardEvent } from 'react'
+import react from 'react'
 
 type Callback = (() => void) | undefined
-type KeyboardEvt = KeyboardEvent<any>
+export type KeyboardEvt = react.KeyboardEvent<HTMLElement> | KeyboardEvent
 
 const enterReg = /^Enter$|^NumpadEnter$/
 

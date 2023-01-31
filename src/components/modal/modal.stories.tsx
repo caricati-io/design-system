@@ -14,9 +14,7 @@ const Template: Story<Props> = (args) => <Modal {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  onClose() {
-    console.log('handle close')
-  },
+  onClose() {},
   children: (
     <>
       <ModalHeader title="Modal title" />

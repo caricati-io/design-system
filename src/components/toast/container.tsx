@@ -89,7 +89,7 @@ export default function ToastContainer() {
               variant={item.type}
               id={`toast_${item.id}`}
               toastDuration={duration}
-              onClick={(e) => rm(item.id)}
+              onClick={() => rm(item.id)}
               onKeyDown={(event) => keyActionClick(event, () => rm(item.id))}
             >
               {item.label}

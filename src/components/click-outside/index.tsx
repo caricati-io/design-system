@@ -1,4 +1,9 @@
-import React, { useEffect, useRef, useCallback } from 'react'
+import React, {
+  useEffect,
+  useRef,
+  useCallback,
+  useImperativeHandle,
+} from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div``
@@ -9,9 +14,20 @@ interface Props {
   onOutside: (e: MouseEvent) => void
 }
 
-function ClickOutsideForward({ children, onOutside, className }: Props, ref: any): React.ReactElement {
-  const currentRef = useRef<HTMLDivElement>(null)
-  const innerRef = ref || currentRef
+export function useForwardedRef<T>(
+  ref: React.RefObject<T>,
+  forwardedRef: React.ForwardedRef<T>
+): void {
+  useImperativeHandle<T | null, T | null>(forwardedRef, () => ref.current)
+}
+
+function ClickOutsideForward(
+  { children, onOutside, className }: Props,
+  forwardedRef: React.ForwardedRef<HTMLDivElement>
+): React.ReactElement {
+  const innerRef = useRef<HTMLDivElement>(null)
+
+  useForwardedRef<HTMLDivElement>(innerRef, forwardedRef)
 
   const handleClick = useCallback(
     (event: MouseEvent) => {
@@ -37,6 +53,8 @@ function ClickOutsideForward({ children, onOutside, className }: Props, ref: any
   )
 }
 
-const ClickOutside = React.forwardRef(ClickOutsideForward)
+const ClickOutside = React.forwardRef<HTMLDivElement, Props>(
+  ClickOutsideForward
+)
 
 export default ClickOutside

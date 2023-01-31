@@ -10,7 +10,7 @@ const Container = styled.div`
   position: relative;
 `
 
-const Label = styled.label`
+const Label = styled.div`
   font-size: 0.875rem;
   margin-top: 0;
   margin-left: 0;
@@ -106,7 +106,6 @@ interface Option {
 export interface Props {
   label?: string
   value?: string
-  required?: boolean
   disabled?: boolean
   placeholder?: string
   options?: Option[] | null
@@ -117,7 +116,6 @@ export default function Select({
   label,
   value,
   options,
-  required,
   disabled,
   placeholder,
   onChange,
@@ -143,8 +141,13 @@ export default function Select({
       {label && (
         <Label
           id={labelId}
-          htmlFor={controls}
+          role="button"
+          tabIndex={-1}
+          aria-labelledby={controls}
           onClick={() => controlsRef.current?.focus()}
+          onKeyDown={(event) =>
+            keyActionClick(event, () => controlsRef.current?.focus())
+          }
         >
           {label}
         </Label>
@@ -182,6 +185,7 @@ export default function Select({
               {options?.map((option) => (
                 <OptionItem
                   role="option"
+                  tabIndex={0}
                   key={option.value}
                   id={`${listbox}_${option.value}`}
                   onClick={() => handleChange(option)}

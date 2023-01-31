@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from 'react'
 import styled from 'styled-components'
-import { keyEsc } from '../../keyboard-event'
+import { KeyboardEvt, keyEsc } from '../../keyboard-event'
 import Portal from '../portal'
 import { ModalProvider } from './context'
 
@@ -35,8 +35,8 @@ export default function Modal({ width = 400, children, onClose }: Props) {
 
   useEffect(() => {
     if (onCloseMemo) {
-      const handleEsc = (event: any) => keyEsc(event, onCloseMemo)
-      window.addEventListener('keydown', handleEsc)
+      const handleEsc = (event: KeyboardEvt) => keyEsc(event, onCloseMemo)
+      window.addEventListener('keydown', event => event)
       return () => {
         window.removeEventListener('keydown', handleEsc)
       }

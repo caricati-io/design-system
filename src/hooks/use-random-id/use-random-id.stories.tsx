@@ -5,7 +5,7 @@ interface Props {
   nada: string
 }
 
-function Demo(args: Props) {
+function Demo() {
   const random = useRandomId()
   return <pre>id: {random()}</pre>
 }
@@ -14,7 +14,7 @@ export default {
   title: 'Hooks/useRandomId',
 }
 
-const Template: Story<Props> = (args) => <Demo {...args} />
+const Template: Story<Props> = () => <Demo />
 
 export const Default = Template.bind({})
 Default.args = {}

@@ -44,7 +44,7 @@ const lib = {
   ServerStyleSheet,
   StyleSheetManager,
   keyboardEvent,
-  InstallDesignSystem: Install,
+  InstallRui: Install,
 
   // Components init
   Accordion,

@@ -213,7 +213,6 @@ export const Select = SelectTemplate.bind({})
 Select.args = {
   label: 'Select',
   value: '',
-  required: false,
   disabled: false,
   placeholder: 'Select an option',
   options: [

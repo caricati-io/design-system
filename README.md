@@ -1,4 +1,5 @@
 # ⛔️ Warning!
+
 This library is not ready yet. Everything will be fine when version 1.0.0 is released.
 
 <hr />
@@ -6,7 +7,7 @@ This library is not ready yet. Everything will be fine when version 1.0.0 is rel
 # RUI
 
 <br />
-<img src="./.storybook/logo.svg" alt="Caricati.io - Design System" width="400">
+<img src="./.github/logo-light.svg" alt="RUI - React User Interface" width="300">
 
 This project was made in React to be lightweight and with few dependencies.
 
@@ -26,28 +27,27 @@ This project was made in React to be lightweight and with few dependencies.
 <hr />
 
 ## Install in your React project
+
 First, you need to install by command line using npm or yarn:
 
 ```
 npm install @caricati/rui --save
 ```
 
-and then, install the `<InstallDesignSystem />` in your root component:
+and then, install the `<InstallRui />` in your root component:
 
 ```
-import { InstallDesignSystem } from '@caricati/rui'
+import { InstallRui } from '@caricati/rui'
 ...
 ReactDOM.render(
   <React.StrictMode>
-    <InstallDesignSystem>
+    <InstallRui>
       <App />
-    </InstallDesignSystem>
+    </InstallRui>
   </React.StrictMode>,
   document.getElementById('root'),
 )
 ```
-
-
 
 ## Using styled-components from library
 

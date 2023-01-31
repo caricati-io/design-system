@@ -28,11 +28,12 @@
   },
   "plugins": ["react", "styled-components-a11y", "@typescript-eslint"],
   "rules": {
+    "semi": ["error", "never"],
     "react/react-in-jsx-scope": "off",
     "react/require-default-props": "off",
-    "import/no-extraneous-dependencies": "off",
     "react/jsx-props-no-spreading": "off",
-    "semi": ["error", "never"],
+    "import/no-extraneous-dependencies": "off",
+    "styled-components-a11y/no-autofocus": "off",
     "react/jsx-filename-extension": [
       1,
       {

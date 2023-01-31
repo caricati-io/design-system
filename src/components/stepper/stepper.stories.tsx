@@ -13,7 +13,7 @@ Default.args = {
   current: '2',
   lastItemById: '3',
   onlyActiveIsClickable: false,
-  onChange: (item) => console.log(`clicked step id: ${item.id}`),
+  onChange() {},
   items: [
     { id: '1', label: 'Personal' },
     { id: '2', label: 'Contact' },

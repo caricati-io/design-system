@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 const Scroller = styled.div<{ maxHeight?: string }>`
-  ${({ maxHeight, theme }) => css`
+  ${({ maxHeight }) => css`
     max-height: ${maxHeight || '100%'};
     overflow-y: auto;
     overflow-x: hidden;

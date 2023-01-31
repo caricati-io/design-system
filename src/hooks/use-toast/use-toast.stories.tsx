@@ -16,7 +16,7 @@ interface Props {
   nada: string
 }
 
-function Demo(args: Props) {
+function Demo() {
   const toast = useToast()
   return (
     <Wrap>
@@ -34,7 +34,7 @@ export default {
   title: 'Hooks/useToast',
 }
 
-const Template: Story<Props> = (args) => <Demo {...args} />
+const Template: Story<Props> = () => <Demo />
 
 export const Default = Template.bind({})
 Default.args = {}

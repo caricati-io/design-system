@@ -79,6 +79,7 @@ export default function AccordionItem({ title, children }: Props) {
     <Container isOpen={isOpen}>
       <Header
         role="button"
+        tabIndex={0}
         onClick={toggle}
         aria-expanded={isOpen}
         aria-controls={`_${contentId}`}

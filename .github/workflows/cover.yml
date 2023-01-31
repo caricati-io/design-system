@@ -1,4 +1,5 @@
-name: tests and build
+name: coverage
+
 on:
   push:
     branches: [main]
@@ -17,8 +18,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm install
-      - name: Building
-        run: |
           npm run check
-          npm run build
-          npm run build:storybook
+          npm run test:cover
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3

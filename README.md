@@ -4,16 +4,14 @@ This library is not ready yet. Everything will be fine when version 1.0.0 is rel
 
 <hr />
 
-# RUI
-
-<br />
 <img src="./.github/logo-light.svg" alt="RUI - React User Interface" width="300">
-
-This project was made in React to be lightweight and with few dependencies.
-
 <p>
   <a href="https://caricati-ds.netlify.app/">
     <img src="https://img.shields.io/badge/weiste-demo-205EFC" alt="demo">
+  </a>
+  <img src="https://github.com/caricati-io/rui/actions/workflows/main.yml/badge.svg" alt="tests and build">
+  <a href="https://codecov.io/gh/caricati-io/rui" > 
+    <img src="https://codecov.io/gh/caricati-io/rui/branch/main/graph/badge.svg?token=G9V23U4BNJ"/>
   </a>
   <a href="https://www.npmjs.com/package/@caricati/rui">
     <img src="https://img.shields.io/badge/package-npm-FA9703" alt="npm">
@@ -21,10 +19,11 @@ This project was made in React to be lightweight and with few dependencies.
   <a href="./LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-292F3A" alt="MIT">
   </a>
-  <img src="https://github.com/caricati-io/rui/actions/workflows/main.yml/badge.svg" alt="tests and build">
 </p>
 
-<hr />
+# RUI
+
+This project was made in React to be lightweight and with few dependencies.
 
 ## Install in your React project
 
@@ -49,7 +48,7 @@ ReactDOM.render(
 )
 ```
 
-## Using styled-components from library
+## Use styled-components from rui
 
 ```
 import { styled, useTheme } from '@caricati/rui'

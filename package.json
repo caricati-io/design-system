@@ -11,9 +11,9 @@
   },
   "scripts": {
     "build": "rm -rf ./dist && BABEL_ENV=esm babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/js",
-    "test": "jest ./src --env=jsdom",
+    "test": "jest --env=jsdom",
     "test:cover": "jest --env=jsdom --coverage",
-    "test:dev": "jest ./src --env=jsdom --coverage --verbose --watchAll",
+    "test:dev": "jest --env=jsdom --coverage --verbose --watchAll",
     "check": "CI=true npm test && npm run check:lint && npm run check:types",
     "check:prettier": "prettier --list-different './src'",
     "check:lint": "eslint ./src",

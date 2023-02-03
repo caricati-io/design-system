@@ -5,7 +5,7 @@ export type ToastVariant = 'ERROR' | 'SUCCESS' | 'INFO' | 'WARNING'
 export interface Toast {
   id: string
   label: string
-  type: ToastVariant
+  variant: ToastVariant
 }
 
 interface ToastContext {

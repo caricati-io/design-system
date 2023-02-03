@@ -29,6 +29,7 @@
   "plugins": ["react", "styled-components-a11y", "@typescript-eslint"],
   "rules": {
     "semi": ["error", "never"],
+    "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
     "react/require-default-props": "off",
     "react/jsx-props-no-spreading": "off",

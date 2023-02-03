@@ -6,22 +6,22 @@ export default function useToast() {
   const { add } = useContext(toastContext)
 
   const error = useCallback(
-    (label: string) => add({ id: randomId(), label, type: 'ERROR' }),
+    (label: string) => add({ id: randomId(), label, variant: 'ERROR' }),
     [add]
   )
 
   const success = useCallback(
-    (label: string) => add({ id: randomId(), label, type: 'SUCCESS' }),
+    (label: string) => add({ id: randomId(), label, variant: 'SUCCESS' }),
     [add]
   )
 
   const info = useCallback(
-    (label: string) => add({ id: randomId(), label, type: 'INFO' }),
+    (label: string) => add({ id: randomId(), label, variant: 'INFO' }),
     [add]
   )
 
   const warning = useCallback(
-    (label: string) => add({ id: randomId(), label, type: 'WARNING' }),
+    (label: string) => add({ id: randomId(), label, variant: 'WARNING' }),
     [add]
   )
 

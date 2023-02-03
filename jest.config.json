@@ -1,4 +1,5 @@
 {
+  "testMatch": ["<rootDir>/src/**/*.test.ts", "<rootDir>/src/**/*.test.tsx"],
   "moduleNameMapper": {
     "\\.(css|jpg|png)$": "<rootDir>/config/jest/empty-module.ts"
   },

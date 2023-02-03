@@ -15,7 +15,7 @@ const List = styled.div`
   overflow: hidden;
   z-index: 505;
 `
-const Item = styled.div<{ variant: ToastVariant; toastDuration: number }>`
+const Item = styled.div<{ variant?: ToastVariant; toastDuration: number }>`
   padding: 1rem 2rem;
   border-radius: 4px;
   font-weight: 500;
@@ -86,7 +86,7 @@ export default function ToastContainer() {
               role="button"
               tabIndex={-1}
               key={item.id}
-              variant={item.type}
+              variant={item.variant}
               id={`toast_${item.id}`}
               toastDuration={duration}
               onClick={() => rm(item.id)}

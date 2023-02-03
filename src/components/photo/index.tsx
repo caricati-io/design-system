@@ -47,9 +47,6 @@ const Container = styled.figure<ContainerProps>`
           if (photoStatus === 'busy') {
             return theme.color.red
           }
-          if (photoStatus === 'offline') {
-            return theme.color.gray
-          }
           if (photoStatus === 'online') {
             return theme.color.green
           }

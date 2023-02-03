@@ -22,7 +22,7 @@
     "prepublishOnly": "npm run check && npm build",
     "start:demo": "start-storybook -p 6006 -s public",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build:storybook": "build-storybook"
   },
   "dependencies": {
     "@fontsource/poppins": "^4.5.10",

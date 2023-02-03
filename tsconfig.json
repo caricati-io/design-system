@@ -16,5 +16,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", ".eslintrc.json", "config/jest/setupTests.ts"]
+  "include": ["src", ".eslintrc", "config/jest/setup.ts", "webpack.config.js"]
 }

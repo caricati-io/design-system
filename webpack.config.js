@@ -1,10 +1,11 @@
-const ts = require('typescript');
-const ReactDocgenTypescriptPlugin = require("react-docgen-typescript-plugin").default;
+// const ts = require('typescript');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const ReactDocgenTypescriptPlugin = require("react-docgen-typescript-plugin").default
 
 
 module.exports = {
   test: /\.(sass|less|css)$/,
-  loaders: ['style-loader', 'css-loader', 'sass-loader'],
+  loaders: ['css-loader'],
   plugins: [
     new ReactDocgenTypescriptPlugin(),
   ],
@@ -12,7 +13,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: ['css-loader'],
       },
     ],
   },

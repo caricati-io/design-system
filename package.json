@@ -11,9 +11,9 @@
   },
   "scripts": {
     "build": "rm -rf ./dist && BABEL_ENV=esm babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/js",
-    "test": "jest --env=jsdom",
+    "test": "jest ./src --env=jsdom",
     "test:cover": "jest --env=jsdom --coverage",
-    "test:dev": "jest --env=jsdom --coverage --verbose --watchAll",
+    "test:dev": "jest ./src --env=jsdom --coverage --verbose --watchAll",
     "check": "CI=true npm test && npm run check:lint && npm run check:types",
     "check:prettier": "prettier --list-different './src'",
     "check:lint": "eslint ./src",
@@ -28,6 +28,7 @@
     "@fontsource/poppins": "^4.5.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "css-loader": "^6.7.3",
     "styled-components": "^5.3.6",
     "typescript": "^4.8.4"
   },
@@ -58,7 +59,6 @@
     "babel-loader": "^8.3.0",
     "babel-plugin-named-exports-order": "^0.0.2",
     "babel-plugin-typescript-to-proptypes": "^2.0.0",
-    "css-loader": "^6.7.3",
     "eslint": "^8.25.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.0.0",
@@ -74,9 +74,6 @@
     "prettier": "2.7.1",
     "prop-types": "^15.8.1",
     "react-docgen-typescript-plugin": "^1.0.2",
-    "sass": "^1.57.1",
-    "sass-loader": "^13.2.0",
-    "style-loader": "^3.3.1",
     "webpack": "^5.74.0"
   }
 }

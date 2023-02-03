@@ -22,4 +22,27 @@ describe('<Button />', () => {
     const button = screen.getByText(/Its disabled/i)
     expect(button).toHaveAttribute('disabled')
   })
+
+  test('should be render the primary button', () => {
+    render(<Button primary>Primary</Button>)
+    const button = screen.getByText(/Primary/i)
+    expect(button).toBeInTheDocument()
+  })
+
+  test('should be render the small button', () => {
+    render(<Button small>Small button</Button>)
+    const button = screen.getByText(/Small button/i)
+    expect(button).toBeInTheDocument()
+  })
+
+  test('should be render the submit button', () => {
+    render(<Button submit>Submit button</Button>)
+    const button = screen.getByText(/Submit button/i)
+    expect(button).toBeInTheDocument()
+  })
+
+  test('should be render the icons to use in button', () => {
+    const { container } = render(<Button submit leftIcon='bell' rightIcon='check'>Click me</Button>)
+    expect(container.querySelectorAll('svg')).toHaveProperty('length', 2)
+  })
 })

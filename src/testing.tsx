@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import Install from './install'
 
 interface Props {
@@ -16,4 +17,4 @@ const customRender = (ui: any, options?: any) =>
 export * from '@testing-library/react'
 
 // override render method
-export { customRender as render }
+export { customRender as render, userEvent }

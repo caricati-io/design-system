@@ -6,7 +6,7 @@ export default {
   title: 'Components/Badge',
   component: Badge,
   argTypes: {
-    color: {
+    variant: {
       options: ['green', 'red', 'yellow', 'orange', 'blue'],
       control: { type: 'select' },
     },

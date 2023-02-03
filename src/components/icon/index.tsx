@@ -46,7 +46,7 @@ export const iconMap = {
 }
 
 const Container = styled.div<{ iconSize: string }>`
-  display: inline;
+  display: inline-block;
   width: ${({ iconSize }) => iconSize};
   height: ${({ iconSize }) => iconSize};
 

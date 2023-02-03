@@ -67,8 +67,8 @@ export interface Props {
 }
 
 export default function AccordionItem({ title, children }: Props) {
-  const accordionId = useId()
   const contentId = useId()
+  const accordionId = useId()
   const { openIds, handleToggle } = useContext(accordionContext)
   const contextRef = useRef<HTMLDivElement>(null)
   const isOpen = openIds.includes(accordionId)
@@ -78,12 +78,12 @@ export default function AccordionItem({ title, children }: Props) {
   return (
     <Container isOpen={isOpen}>
       <Header
-        role="button"
         tabIndex={0}
+        role="button"
         onClick={toggle}
+        id={`_${accordionId}`}
         aria-expanded={isOpen}
         aria-controls={`_${contentId}`}
-        id={`_${accordionId}`}
         onKeyDown={(event) => keyActionClick(event, toggle)}
       >
         <h3>{title}</h3>

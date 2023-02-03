@@ -69,7 +69,7 @@ WidthBadge.args = {
   children: (
     <>
       <PanelHeader title="Heading">
-        <Badge label="Feature" color="green" />
+        <Badge label="Feature" variant="green" />
       </PanelHeader>
       <PanelBody>Panel body</PanelBody>
     </>

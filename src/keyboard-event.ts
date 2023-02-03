@@ -18,7 +18,7 @@ export const keyEsc = (e: KeyboardEvt, callback: Callback): void => {
 }
 
 export const keyActionClick = (e: KeyboardEvt, callback: Callback): void => {
-  if (/Escape|Space/.test(e.code) && typeof callback === 'function') callback()
+  if (/Enter|Space/.test(e.code) && typeof callback === 'function') callback()
 }
 
 export const keyCtrlEnter = (e: KeyboardEvt, callback: Callback): void => {

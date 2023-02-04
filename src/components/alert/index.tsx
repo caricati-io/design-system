@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export type AlertVariant = 'error' | 'success' | 'info' | 'warning'
 
-const Container = styled.div<{ variant: AlertVariant }>`
+const Container = styled.div<{ variant?: AlertVariant }>`
   padding: 1rem 1.25rem;
   border-radius: 0.25rem;
   background-color: ${({ theme, variant }) => {
@@ -28,11 +28,7 @@ export interface Props {
   children: React.ReactNode
 }
 
-export default function Alert({
-  children,
-  className,
-  variant = 'info',
-}: Props) {
+export default function Alert({ children, className, variant }: Props) {
   return (
     <Container variant={variant} className={className}>
       {children}

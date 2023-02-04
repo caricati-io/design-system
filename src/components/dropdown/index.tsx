@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import styled, { css } from 'styled-components'
-import ButtonClean from '../button/clean'
+import { keyActionClick } from '../../keyboard-event'
 import ClickOutside from '../click-outside'
 import Icon, { IconType } from '../icon'
 
@@ -11,7 +11,7 @@ const Container = styled(ClickOutside)`
   display: inline-block;
 `
 
-const Option = styled(ButtonClean)`
+const Option = styled.div`
   width: 100%;
   height: 40px;
   display: block;
@@ -22,12 +22,13 @@ const Option = styled(ButtonClean)`
   cursor: pointer;
   display: flex;
   align-items: center;
+  box-sizing: border-box;
 
-  &:not(:disabled):hover {
+  &:not([aria-disabled='true']):hover {
     background-color: ${({ theme }) => theme.color.lineLight};
   }
 
-  &:disabled {
+  &[aria-disabled='true'] {
     opacity: 0.5;
     cursor: default;
   }
@@ -105,7 +106,7 @@ export interface Props {
     label: string
     icon?: IconType
     disabled?: boolean
-    onClick?: (params: ActionParams) => null
+    onClick?: (params: ActionParams) => void
   }[]
 }
 
@@ -132,16 +133,22 @@ export default function Dropdown({
       {isOpen && (
         <Box
           xAxis={xAxis}
+          role="listbox"
           boxMaxWidth={maxWidth}
           boxMinWidth={minWidth}
           triggerDistance={triggerDistance}
         >
           {items?.map((item) => (
             <Option
-              type="button"
+              tabIndex={0}
+              role="option"
               key={`${item.id}`}
-              disabled={item.disabled}
+              aria-selected={false}
+              aria-disabled={item.disabled}
               onClick={() => item.onClick?.(actions)}
+              onKeyDown={(event) =>
+                keyActionClick(event, () => item.onClick?.(actions))
+              }
             >
               {item.icon && <OptionIcon name={item.icon} />}
               {item.label}

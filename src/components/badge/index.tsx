@@ -1,10 +1,11 @@
 import styled, { css } from 'styled-components'
+
 import ButtonClean from '../button/clean'
 import Icon, { IconType } from '../icon'
 
 interface ContainerProps {
-  badgeColor: BadgeVariant
   isClickable: boolean
+  badgeColor: BadgeVariant
 }
 
 const Container = styled(ButtonClean)<ContainerProps>`
@@ -68,11 +69,16 @@ export interface Props {
 export default function Badge({
   label,
   onClick,
-  variant = 'green',
   rightIcon,
+  variant = 'green',
 }: Props) {
   return (
-    <Container type="button" isClickable={!!onClick} badgeColor={variant}>
+    <Container
+      type="button"
+      onClick={onClick}
+      badgeColor={variant}
+      isClickable={!!onClick}
+    >
       {label}
       {rightIcon && <RightIcon name={rightIcon} size={14} />}
     </Container>

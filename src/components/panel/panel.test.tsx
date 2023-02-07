@@ -7,7 +7,10 @@ describe('<Panel />', () => {
   test('renders a panel correctly', () => {
     const { getByText } = render(
       <Panel>
-        <PanelHeader title="Heading" icon="eye" />
+        <PanelHeader
+          title="Heading"
+          icon={{ flair: 'outlined', name: 'bell' }}
+        />
         <PanelBody>Body of the panel</PanelBody>
       </Panel>
     )
@@ -18,7 +21,10 @@ describe('<Panel />', () => {
   test('renders a danger panel correctly', () => {
     const { getByText } = render(
       <Panel danger>
-        <PanelHeader icon="check" title="Danger!" />
+        <PanelHeader
+          title="Danger!"
+          icon={{ flair: 'filled', name: 'check' }}
+        />
         <PanelBody>Body</PanelBody>
       </Panel>
     )

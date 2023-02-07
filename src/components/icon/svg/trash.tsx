@@ -1,4 +1,4 @@
-const TashSvg = (
+const TrashSvg = (
   <svg
     width="24"
     height="24"
@@ -13,4 +13,4 @@ const TashSvg = (
   </svg>
 )
 
-export default TashSvg
+export default TrashSvg

@@ -49,7 +49,7 @@ WidthActions.args = {
           triggerDistance={16}
           trigger={({ toggle }) => (
             <GhostButton onClick={toggle}>
-              <Icon name="dots-vertical" size={20} />
+              <Icon name="more-vertical" size={20} />
             </GhostButton>
           )}
           items={[

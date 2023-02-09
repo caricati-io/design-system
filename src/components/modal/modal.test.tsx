@@ -51,4 +51,26 @@ describe('<Modal />', () => {
 
     expect(fn).toBeCalledTimes(1)
   })
+
+  test('dispatchs onClose event when the ESC key is pressed', () => {
+    const fn = jest.fn()
+
+    const { container } = render(
+      <Modal onClose={fn}>
+        <ModalHeader title="Modal title" />
+        <ModalBody>
+          <p>Modal body</p>
+        </ModalBody>
+      </Modal>
+    )
+
+    fireEvent.keyDown(container, {
+      key: 'Escape',
+      code: 'Escape',
+      keyCode: 27,
+      charCode: 27,
+    })
+
+    expect(fn).toBeCalledTimes(1)
+  })
 })

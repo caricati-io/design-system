@@ -36,7 +36,7 @@ export default function Modal({ width = 400, children, onClose }: Props) {
   useEffect(() => {
     if (onCloseMemo) {
       const handleEsc = (event: KeyboardEvt) => keyEsc(event, onCloseMemo)
-      window.addEventListener('keydown', event => event)
+      window.addEventListener('keydown', handleEsc)
       return () => {
         window.removeEventListener('keydown', handleEsc)
       }

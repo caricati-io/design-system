@@ -23,7 +23,7 @@ import ButtonGroup from './components/button-group'
 import PanelBody from './components/panel/body'
 import PanelHeader from './components/panel/header'
 import AccordionItem from './components/accordion/item'
-import Icon, { IconType } from './components/icon'
+import Icon, { IconNames } from './components/icon'
 
 // forms
 import Radio from './components/form/radio'
@@ -36,7 +36,7 @@ import InputEmail from './components/form/input-email'
 import InputSearch from './components/form/input-search'
 import InputPassword from './components/form/input-password'
 
-export type { IconType }
+export type { IconNames }
 
 const lib = {
   styled,

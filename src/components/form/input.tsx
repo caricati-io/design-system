@@ -1,7 +1,7 @@
 import React, { useId } from 'react'
 import styled from 'styled-components'
 import ButtonClean from '../button/clean'
-import Icon, { IconType } from '../icon'
+import Icon, { IconNames } from '../icon'
 import inputStyled from './input.styled'
 
 const Container = styled.div`
@@ -56,7 +56,7 @@ export interface Props {
   autoFocus?: boolean
   placeholder?: string
   autoComplete?: string
-  leftIcon?: IconType | null
+  leftIcon?: IconNames | null
   type: React.HTMLInputTypeAttribute
   onChange?: (
     value: string,
@@ -66,7 +66,7 @@ export interface Props {
 
 interface RestrictProps {
   button?: {
-    icon: IconType
+    icon: IconNames
     onClick: () => void
   } | null
 }

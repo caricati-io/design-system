@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import Icon, { IconType } from '../icon'
+import Icon, { IconNames } from '../icon'
 
 type StyleType = 'primary' | 'default'
 type SizeType = 'normal' | 'small'
@@ -86,8 +86,8 @@ export interface Props {
   className?: string
   disabled?: boolean
   children: React.ReactNode
-  leftIcon?: IconType
-  rightIcon?: IconType
+  leftIcon?: IconNames
+  rightIcon?: IconNames
   onClick?(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void
 }
 

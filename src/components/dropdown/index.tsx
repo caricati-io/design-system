@@ -2,7 +2,7 @@ import { useState } from 'react'
 import styled, { css } from 'styled-components'
 import { keyActionClick } from '../../keyboard-event'
 import ClickOutside from '../click-outside'
-import Icon, { IconType } from '../icon'
+import Icon, { IconNames } from '../icon'
 
 type XAxis = 'left' | 'right'
 
@@ -104,7 +104,7 @@ export interface Props {
   items: {
     id: ID
     label: string
-    icon?: IconType
+    icon?: IconNames
     disabled?: boolean
     onClick?: (params: ActionParams) => void
   }[]

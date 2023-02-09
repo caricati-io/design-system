@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 import ButtonClean from '../button/clean'
-import Icon, { IconType } from '../icon'
+import Icon, { IconNames } from '../icon'
 
 interface ContainerProps {
   isClickable: boolean
@@ -62,7 +62,7 @@ export type BadgeVariant = 'green' | 'yellow' | 'red' | 'orange' | 'blue'
 export interface Props {
   variant?: BadgeVariant
   onClick?: () => void
-  rightIcon?: IconType
+  rightIcon?: IconNames
   label: string
 }
 

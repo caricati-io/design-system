@@ -9,7 +9,7 @@ describe('<Panel />', () => {
       <Panel>
         <PanelHeader
           title="Heading"
-          icon={{ flair: 'outlined', name: 'bell' }}
+          icon="bell"
         />
         <PanelBody>Body of the panel</PanelBody>
       </Panel>
@@ -23,7 +23,7 @@ describe('<Panel />', () => {
       <Panel danger>
         <PanelHeader
           title="Danger!"
-          icon={{ flair: 'filled', name: 'check' }}
+          icon="check"
         />
         <PanelBody>Body</PanelBody>
       </Panel>

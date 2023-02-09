@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, userEvent } from '../../testing'
+import { render, screen, fireEvent } from '../../testing'
 
 import Accordion from '.'
 import AccordionItem from './item'

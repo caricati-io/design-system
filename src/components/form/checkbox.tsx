@@ -94,7 +94,7 @@ export default function Checkbox({
           </svg>
         )}
       </Box>
-      <Label id={id}>{label}</Label>
+      {!!label && <Label id={id}>{label}</Label>}
     </Container>
   )
 }

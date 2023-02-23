@@ -87,7 +87,7 @@ export default function Radio({
       onKeyDown={(event) => keyActionClick(event, handleClick)}
     >
       <Circle isChecked={checked} data-checker />
-      <Label id={id}>{label}</Label>
+      {!!label && <Label id={id}>{label}</Label>}
     </Container>
   )
 }

@@ -181,7 +181,7 @@ export default function Select({
             aria-labelledby={labelId}
           >
             <Scroller maxHeight="140px">
-              {options?.length === 0 && <p>No items found.</p>}
+              {options?.length === 0 && <p>No items found</p>}
               {options?.map((option) => (
                 <OptionItem
                   role="option"

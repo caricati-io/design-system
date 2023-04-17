@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Container = styled.div`
-  padding: 0.625rem 1.25rem;
+  padding: 0.625rem 1.25rem 2rem;
 `
 
 export interface Props {

@@ -5,6 +5,8 @@ const Container = styled(ButtonClean)`
   height: 2.5rem;
   padding: 0 0.75rem;
   border-radius: 0.625rem;
+  display: inline-flex;
+  align-items: center;
   cursor: pointer;
   outline: none;
 

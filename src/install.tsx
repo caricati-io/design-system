@@ -8,6 +8,8 @@ import { DesignSystemProvider } from './context'
 import ToastProvider from './components/toast/provider'
 
 const ResetStyles = createGlobalStyle`
+  * { margin: 0; padding: 0 }
+
   body {
     font-size: 16px;
     font-family: ${({ theme }) => theme.font.family};
@@ -64,6 +66,13 @@ const ResetStyles = createGlobalStyle`
   }
 `
 
+type Theme = typeof intTheme
+
+declare module 'styled-components' {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  export interface DefaultTheme extends Theme {}
+}
+
 interface Props {
   portalId?: string
   theme?: typeof intTheme
@@ -73,7 +82,7 @@ interface Props {
 export default function Install({
   children,
   theme = intTheme,
-  portalId = 'cds-portal',
+  portalId = 'rui-portal',
 }: Props) {
   useEffect(() => {
     // create element for portals

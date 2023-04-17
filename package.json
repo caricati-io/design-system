@@ -1,16 +1,15 @@
 {
   "name": "@caricati/rui",
-  "version": "0.1.0",
+  "version": "0.1.9",
   "license": "MIT",
   "source": "src/index.ts",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/js/index.js",
+  "types": "dist/types/index.d.ts",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/caricati-io"
+    "access": "public"
   },
   "scripts": {
-    "build": "rm -rf ./dist && BABEL_ENV=esm babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/js",
+    "build": "rm -rf ./dist && BABEL_ENV=esm babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/js && tsc --project ./tsconfig.json --emitDeclarationOnly",
     "test": "jest --env=jsdom",
     "test:cover": "jest --env=jsdom --coverage",
     "test:dev": "jest --env=jsdom --coverage --verbose --watchAll",
@@ -19,23 +18,22 @@
     "check:lint": "eslint ./src",
     "check:types": "tsc --project ./tsconfig.json --noEmit",
     "lint": "eslint src",
-    "prepublishOnly": "npm run check && npm build",
+    "prepublishOnly": "npm run check && npm run build",
     "start:demo": "start-storybook -p 6006 -s public",
     "storybook": "start-storybook -p 6006",
     "build:storybook": "build-storybook"
   },
   "dependencies": {
     "@fontsource/poppins": "^4.5.10",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "css-loader": "^6.7.3",
-    "styled-components": "^5.3.6",
-    "typescript": "^4.8.4"
+    "@types/styled-components": "^5.1.26",
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@babel/cli": "^7.20.7",
     "@babel/core": "^7.20.12",
     "@babel/plugin-transform-react-jsx": "^7.20.13",
+    "@caricati/eslint-config-react": "^1.0.1",
+    "@caricati/prettier-config": "^1.0.1",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-interactions": "^6.5.16",
@@ -53,27 +51,27 @@
     "@types/node": "^16.11.65",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
-    "@types/styled-components": "^5.1.26",
-    "@typescript-eslint/eslint-plugin": "^5.40.0",
-    "@typescript-eslint/parser": "^5.40.0",
     "babel-loader": "^8.3.0",
     "babel-plugin-named-exports-order": "^0.0.2",
     "babel-plugin-typescript-to-proptypes": "^2.0.0",
-    "eslint": "^8.25.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsx-a11y": "^6.6.1",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.31.10",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-styled-components-a11y": "^0.1.0",
+    "css-loader": "^6.7.3",
     "jest": "^29.4.1",
     "jest-environment-jsdom": "^29.4.1",
-    "prettier": "2.7.1",
     "prop-types": "^15.8.1",
+    "react": "^18.2.0",
     "react-docgen-typescript-plugin": "^1.0.2",
+    "react-dom": "^18.2.0",
+    "typescript": "^4.8.4",
     "webpack": "^5.74.0"
+  },
+  "peerDependencies": {
+    "@types/react": ">=16.14.8",
+    "react": ">=18.2.0",
+    "react-dom": ">=18.2.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    }
   }
 }

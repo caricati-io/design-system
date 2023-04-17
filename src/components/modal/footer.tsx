@@ -2,8 +2,7 @@ import styled, { css } from 'styled-components'
 
 const Container = styled.div<{ hasButtonGap: boolean }>`
   display: flex;
-  padding: 1.25rem;
-  border-top: 2px solid ${({ theme }) => theme.color.lineLight};
+  padding: 0 1.25rem 1.25rem;
 
   ${({ hasButtonGap }) => hasButtonGap && css`
     & > button:not(:last-child) {

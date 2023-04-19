@@ -91,7 +91,7 @@ export interface Props {
   size?: number
   count?: number
   status?: Status
-  className: string
+  className?: string
   featured?: boolean
 }
 

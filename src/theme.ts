@@ -29,6 +29,7 @@ const theme = {
 
     input: '#323741',
     inputText: '#FFFFFF',
+    inputLine: '#4c525e',
     inputTextDisabled: '#8a8f99',
     inputError: '#651F1F',
     inputLineError: '#B01B1B',
@@ -77,6 +78,7 @@ const theme = {
     errorFocus: '0 0 0 4px rgba(176, 27, 27, 0.3)',
     toast: '0 2px 0.5rem 1px rgba(0, 0, 0, 0.3)',
     btnHover: '0 2px 0.5rem 1px rgba(0, 0, 0, 0.3)',
+    box: '0 2px 4px rgba(0, 0, 0, 0.1)',
   },
 }
 

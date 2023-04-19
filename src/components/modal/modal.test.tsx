@@ -9,7 +9,7 @@ import Button from '../button'
 describe('<Modal />', () => {
   test('renders a Modal correctly', () => {
     const { getByText } = render(
-      <Modal>
+      <Modal isOpen>
         <ModalHeader title="Modal title" />
         <ModalBody>
           <p>Modal body</p>
@@ -26,7 +26,7 @@ describe('<Modal />', () => {
 
   test('should removes button gap from footer', () => {
     const { getByText } = render(
-      <Modal>
+      <Modal isOpen>
         <ModalFooter>
           <Button>Cancel</Button>
         </ModalFooter>
@@ -35,11 +35,16 @@ describe('<Modal />', () => {
     expect(getByText('Cancel')).toBeInTheDocument()
   })
 
+  test('should removes the modal from document when the isOpen is false', () => {
+    const { queryByText } = render(<Modal isOpen={false}>modal text</Modal>)
+    expect(queryByText('modal text')).not.toBeInTheDocument()
+  })
+
   test('dispatchs the onClose event', () => {
     const fn = jest.fn()
 
     const { getByRole } = render(
-      <Modal onClose={fn}>
+      <Modal isOpen onClose={fn}>
         <ModalHeader title="Modal title" />
         <ModalBody>
           <p>Modal body</p>
@@ -56,7 +61,7 @@ describe('<Modal />', () => {
     const fn = jest.fn()
 
     const { container } = render(
-      <Modal onClose={fn}>
+      <Modal isOpen onClose={fn}>
         <ModalHeader title="Modal title" />
         <ModalBody>
           <p>Modal body</p>

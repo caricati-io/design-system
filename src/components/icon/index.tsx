@@ -26,6 +26,14 @@ import plusSvg from './svg/plus'
 import SearchSvg from './svg/search'
 import timesSvg from './svg/times'
 import TrashSvg from './svg/trash'
+import boardFilledSvg from './svg/board-filled'
+import boardSvg from './svg/board'
+import playersSvg from './svg/player'
+import playersFilledSvg from './svg/player-filled'
+import settingsSvg from './svg/settings'
+import settingsFilledSvg from './svg/settings-filled'
+import logoutSvg from './svg/logout'
+import logoutFilledSvg from './svg/logout-filled'
 
 const iconsMap = {
   'caret-down': { default: CaretDownSvg },
@@ -42,6 +50,10 @@ const iconsMap = {
   'more-vertical': { default: MoreVerticalSvg },
 
   bell: { default: BellSvg, fill: BellFilledSvg },
+  board: { default: boardSvg, fill: boardFilledSvg },
+  players: { default: playersSvg, fill: playersFilledSvg },
+  settings: { default: settingsSvg, fill: settingsFilledSvg },
+  logout: { default: logoutSvg, fill: logoutFilledSvg },
   chat: { default: ChatSvg },
   check: { default: checkSvg },
   eye: { default: EyeSvg },

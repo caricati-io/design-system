@@ -14,6 +14,7 @@ const Template: Story<Props> = (args) => <Modal {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
+  isOpen: true,
   onClose() {},
   children: (
     <>

@@ -19,18 +19,24 @@ const Box = styled.div<{ boxWidth: number }>`
   width: 100%;
   max-width: ${({ boxWidth }) => `${boxWidth / 16}rem`};
   margin: 2rem auto 2rem;
-  background-color: ${({ theme }) => theme.color.body};
+  background-color: ${({ theme }) => theme.color.box};
   border-radius: 0.625rem;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1), 0 2px 1rem 0 rgba(0, 0, 0, 0.25);
 `
 
 export interface Props {
   width?: number
+  isOpen?: boolean
   onClose?: () => void
   children: React.ReactNode
 }
 
-export default function Modal({ width = 400, children, onClose }: Props) {
+export default function Modal({
+  isOpen,
+  onClose,
+  children,
+  width = 400,
+}: Props) {
   const onCloseMemo = useMemo(() => onClose, [onClose])
 
   useEffect(() => {
@@ -43,6 +49,8 @@ export default function Modal({ width = 400, children, onClose }: Props) {
     }
     return () => null
   }, [onCloseMemo])
+
+  if (!isOpen) return null
 
   return (
     <Portal>

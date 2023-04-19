@@ -86,11 +86,12 @@ const Counter = styled.span<{ imgSize: number }>`
 type Status = 'online' | 'busy' | 'away' | 'offline'
 
 export interface Props {
-  size?: number
-  alt?: string
   src: string
-  status?: Status
+  alt?: string
+  size?: number
   count?: number
+  status?: Status
+  className: string
   featured?: boolean
 }
 
@@ -100,10 +101,16 @@ export default function Photo({
   status,
   size = 32,
   count = 0,
+  className,
   featured = false,
 }: Props) {
   return (
-    <Container imgSize={size} photoStatus={status} isFeatured={featured}>
+    <Container
+      imgSize={size}
+      photoStatus={status}
+      className={className}
+      isFeatured={featured}
+    >
       <div>
         <img src={src} alt={alt} />
       </div>

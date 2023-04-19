@@ -48,14 +48,14 @@ const BtnAction = styled(ButtonClean)`
 
 export interface Props {
   name?: string
-  label?: string
   value?: string
   required?: boolean
   disabled?: boolean
   maxLength?: number
   autoFocus?: boolean
-  placeholder?: string
+  label?: string | null
   autoComplete?: string
+  placeholder?: string | null
   leftIcon?: IconNames | null
   type: React.HTMLInputTypeAttribute
   onChange?: (
@@ -102,8 +102,8 @@ export default function Input({
         maxLength={maxLength}
         hasRightGap={!!button}
         hasLeftGap={!!leftIcon}
-        placeholder={placeholder}
         autoComplete={autoComplete}
+        placeholder={placeholder || undefined}
         onChange={(e) => onChange?.(e.currentTarget.value, e)}
       />
       {button && (

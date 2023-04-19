@@ -43,6 +43,7 @@ const Box = styled.div<{
   padding: 0.5rem;
   background-color: ${({ theme }) => theme.color.box};
   border: 1px solid ${({ theme }) => theme.color.line};
+  box-shadow: ${({ theme }) => theme.shadow.box};
   border-radius: 0.625rem;
   position: absolute;
   top: 100%;

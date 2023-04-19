@@ -19,7 +19,7 @@ const inputStyled = css`
   box-sizing: border-box;
   color: ${({ theme }) => theme.color.text};
   background-color: ${({ theme }) => theme.color.input};
-  border: 1px solid ${({ theme }) => theme.color.line};
+  border: 2px solid ${({ theme }) => theme.color.inputLine};
   outline: none;
   transition-timing-function: ease;
   transition-duration: 250ms;
